@@ -260,12 +260,6 @@ $.afui.useOSThemes=false;
 	$('#doctor_report_button').empty();
 	$('#doctor_report_button').append(localStorage.doctor_report_button).trigger('create');
 	
-	$('#doctor_report_button_tr').empty();
-	$('#doctor_report_button_tr').append(localStorage.doctor_report_button_tr).trigger('create');
-	
-	$('#client_report_button_tr').empty();
-	$('#client_report_button_tr').append(localStorage.report_button_tr).trigger('create');
-	
 	$('#prescription_report_button').empty();
 	$('#prescription_report_button').append(localStorage.prescription_report_button).trigger('create');
 	
@@ -1494,7 +1488,7 @@ function check_user() {
 	//Main
 
 	
-	//var  apipath_base_photo_dm='http://127.0.0.1:8000/demo/syncmobile_417_new_ibn/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
+	//var  apipath_base_photo_dm='http://127.0.0.1:8000/demo/syncmobile_417_new/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
 	
 	//var  apipath_base_photo_dm='http://c003.cloudapp.net/demo/syncmobile_417_new/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
 
@@ -1770,7 +1764,6 @@ function check_user() {
 													var visitPlanMarketComb=''								
 													var profileMarketComb='';								
 													var unscheduleMarketComb='';
-													var unscheduleMarketComb_tr=''
 													
 													for (var k=0; k < planMarketListShowLength; k++){
 														var planMarketValueArray = planMarketList[k].split('<fd>');
@@ -1787,8 +1780,6 @@ function check_user() {
 															
 															profileMarketComb+='<li class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-location" style="border-bottom-style:solid; border-color:#CBE4E4;border-bottom-width:thin;height:15px"><a onClick="marketNextCProfileLV(\''+marketNameID+'\')"><font class="name" style="font-size:12; font-weight:bold; color:#306161">'+marketNameID+'</font></a></li>';
 															
-															
-															unscheduleMarketComb_tr+='<li class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-location" style="border-bottom-style:solid; border-color:#CBE4E4;border-bottom-width:thin"><a onClick="summary_report_doctor_tr(\''+marketNameID+'\')"><font class="name" style="font-size:18; font-weight:bold">'+marketNameID+'</a></font></li>';
 
 															}
 													}
@@ -1796,11 +1787,7 @@ function check_user() {
 																				
 													localStorage.visit_plan_marketlist_combo=visitPlanMarketComb;								
 													localStorage.unschedule_market_cmb_id=unscheduleMarketComb;
-													localStorage.market_cmb_list_cp=profileMarketComb;	
-													
-													localStorage.visit_plan_marketlist_combo_tr=unscheduleMarketComb_tr;
-													$('#market_combo_id_lv_tr').empty();
-													$('#market_combo_id_lv_tr').append(localStorage.visit_plan_marketlist_combo_tr);							
+													localStorage.market_cmb_list_cp=profileMarketComb;							
 
 													//alert (localStorage.unschedule_market_cmb_id)
 													$('#market_combo_id_lv').empty();
@@ -1900,7 +1887,6 @@ function check_user() {
 														
 localStorage.report_button=' <input type="submit" id="loginButton" onClick="s_order_summary_report();"  style="width:100%; height:50px; background-color:#09C; color:#FFF; font-size:20px" value="    Sales Call and Order Count     "   /></br><input type="submit" id="loginButton" onClick="s_order_detail_report();"  style="width:100%; height:50px; background-color:#09C; color:#FFF; font-size:20px" value="    Sales Call and Order Detail     "   />'
 
-localStorage.report_button_tr='<input type="submit" id="loginButton" onClick="s_order_summary_report_tr_next();"  style="width:100%; height:50px; background-color:#09C; color:#FFF; font-size:20px" value="    Order Summary     "   />'
 
 //localStorage.report_button='<a data-role="button" onClick="s_order_detail_report();" >Sales Call and Order Report</a>'
 														}
@@ -1915,9 +1901,6 @@ localStorage.report_button_tr='<input type="submit" id="loginButton" onClick="s_
 													if (doctor_report=="Yes"){
 														
 										localStorage.doctor_report_button='<input type="submit" id="loginButton" onClick="summary_report_doctor();"  style="width:100%; height:50px; background-color:#09C; color:#FFF; font-size:20px" value="    DCR Count     "   /></br><input type="submit" id="loginButton" onClick="detail_report_doctor();"  style="width:100%; height:50px; background-color:#09C; color:#FFF; font-size:20px" value="    DCR Detail     "   />'
-										
-										
-										localStorage.doctor_report_button_tr='<input type="submit" id="loginButton" onClick=" summary_report_doctor_tr_next();"  style="width:100%; height:50px; background-color:#09C; color:#FFF; font-size:20px" value="    DCR Summary     "   />'
 
 										
 										//localStorage.doctor_report_button='<a data-role="button" onClick="detail_report_doctor()" >DCR Report</a>'
@@ -1929,12 +1912,7 @@ localStorage.report_button_tr='<input type="submit" id="loginButton" onClick="s_
 													
 													$('#doctor_report_button').empty();
 													$('#doctor_report_button').append(localStorage.doctor_report_button).trigger('create');
-													
-													$('#doctor_report_button_tr').empty();
-													$('#doctor_report_button_tr').append(localStorage.doctor_report_button_tr).trigger('create');
-													
-													$('#client_report_button_tr').empty();
-													$('#client_report_button_tr').append(localStorage.report_button_tr).trigger('create');
+
 													
 													$('#prescription_report_button').empty();
 													$('#prescription_report_button').append(localStorage.				prescription_report_button).trigger('create');
@@ -2936,22 +2914,12 @@ function reports() {
 					   '<tr><td>ID: </td><td><input id="se_mpo_doc" name="se_mpo_doc" type="text" placeholder="Rep">'+
 					   '<input id="se_item_doc" name="se_item_doc" type="hidden" placeholder="Item"></td></tr>	'+
 					   '<tr><td>BaseCode: </td><td><input id="se_market_doc" name="se_market_doc" type="text" placeholder="Market/level"  ></td></tr></table>'	
-					   
-	var str_report_rep_tr='<table width="100%" border="0">'+
-					   '<tr><td>BaseCode: </td><td><input id="se_market_doc_tr" name="se_market_doc_tr" type="text" placeholder="Market"  ></td></tr></table>'
-	var str_report_sup_tr='<table width="100%" border="0">'+
-					   '<tr><td>BaseCode: </td><td><input id="se_market_doc_tr" name="se_market_doc_tr" type="text" placeholder="Market/level"  ></td></tr></table>'					   
 	
 	if (localStorage.user_type=='rep'){
 		localStorage.str_report=str_report_rep;
-		localStorage.str_report_tr=str_report_rep_tr;
 		$('#report').empty();
 		$('#report').append(localStorage.str_report).trigger('create');
 		$('#se_mpo_doc').val(localStorage.user_id);
-		
-		$('#report_tr').empty();
-		$('#report_tr').append(localStorage.str_report_tr).trigger('create');
-		//$('#se_market_doc_tr').val(localStorage.user_id);
 	}
 	if (localStorage.user_type=='sup'){
 		localStorage.str_report=str_report_sup;
@@ -8365,117 +8333,7 @@ function summary_report_doctor() {
 	$.afui.loadContent("#page_report_doctor",true,true,'right');
 	
 }
-//================================================
-function s_order_summary_report_tr_next() {
-	$('#market_combo_id_lv_tr').empty();
-	$('#market_combo_id_lv_tr').append(localStorage.visit_plan_marketlist_combo_tr);
-	localStorage.reportD='OrdReport'
-	$.afui.loadContent("#page_market_tr",true,true,'right');
-}
-function summary_report_doctor_tr_next() {
-	$('#market_combo_id_lv_tr').empty();
-	$('#market_combo_id_lv_tr').append(localStorage.visit_plan_marketlist_combo_tr);
-	localStorage.reportD='DocReport'
-	$.afui.loadContent("#page_market_tr",true,true,'right');
-}
 
-function summary_report_doctor_tr(marketIdName) {
-	
-	if  (localStorage.reportD=='DocReport'){
-		//if localStorage.repotType
-		$("#wait_image_doctor_tr").show();		
-		$("#report_doctor_tr").html("");
-		
-		var date_year=$("#date_year").val();
-		var date_month=$("#date_month").val();	
-		var se_market_doc_tr=marketIdName.split('|')[1]	
-	
-	
-		//alert (localStorage.base_url+'report_summary_doctor_tr?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&rep_id_report='+localStorage.rep_id_report_doc+'&se_market_report='+se_market_doc_tr+'&date_year='+date_year+'&date_month='+date_month+'&user_type='+localStorage.user_type)
-				$.ajax(localStorage.base_url+'report_summary_doctor_tr?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&rep_id_report='+localStorage.rep_id_report_doc+'&se_market_report='+se_market_doc_tr+'&date_year='+date_year+'&date_month='+date_month+'&user_type='+localStorage.user_type,{
-									type: 'POST',
-									timeout: 30000,
-									error: function(xhr) {
-									$("#wait_image_doctor_tr").hide();	
-									$("#myerror_s_report_doctor_tr").html('Network Timeout. Please check your Internet connection..');
-														},
-									success:function(data, status,xhr){	
-										$("#wait_image_doctor_tr").hide();
-										 if (status!='success'){
-											$("#myerror_s_report_doctor_tr").html('Network Timeout. Please check your Internet connection...');
-											
-										 }
-										 else{	
-											var resultArray = data.replace('</START>','').replace('</END>','').split('<SYNCDATA>');	
-											
-									if (resultArray[0]=='FAILED'){
-												$("#myerror_s_report_doctor_tr").text(resultArray[0]);	
-												
-											}
-									else if (resultArray[0]=='SUCCESS'){
-											
-												//-----------------
-												$("#myerror_s_report_doctor_tr").html(resultArray[1]);
-	
-	
-									
-								}else{		
-									$("#wait_image_doctor_tr").hide();				
-									$("#myerror_s_report_doctor_tr").html('Network Timeout. Please check your Internet connection.');
-									}
-							}
-						  }
-				 });//end ajax
-		$.afui.loadContent("#page_report_doctor_tr",true,true,'right');
-	}
-	if  (localStorage.reportD=='OrdReport'){
-		
-		$("#wait_image_ord").show();		
-		$("#report_ord_tr").html("");
-		
-		var date_year=$("#date_year").val();
-		var date_month=$("#date_month").val();	
-		var se_market_doc_tr=marketIdName.split('|')[1]	
-	
-	
-		alert (localStorage.base_url+'report_summary_ord_tr?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&rep_id_report='+localStorage.rep_id_report_doc+'&se_market_report='+se_market_doc_tr+'&date_year='+date_year+'&date_month='+date_month+'&user_type='+localStorage.user_type)
-				$.ajax(localStorage.base_url+'report_summary_ord_tr?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&rep_id_report='+localStorage.rep_id_report_doc+'&se_market_report='+se_market_doc_tr+'&date_year='+date_year+'&date_month='+date_month+'&user_type='+localStorage.user_type,{
-									type: 'POST',
-									timeout: 30000,
-									error: function(xhr) {
-									$("#wait_image_ord_tr").hide();	
-									$("#myerror_s_report_ord_tr").html('Network Timeout. Please check your Internet connection..');
-														},
-									success:function(data, status,xhr){	
-										$("#wait_image_ord_tr").hide();
-										 if (status!='success'){
-											$("#myerror_s_report_ord_tr").html('Network Timeout. Please check your Internet connection...');
-											
-										 }
-										 else{	
-											var resultArray = data.replace('</START>','').replace('</END>','').split('<SYNCDATA>');	
-											
-									if (resultArray[0]=='FAILED'){
-												$("#myerror_s_report_ord_tr").text(resultArray[0]);	
-												
-											}
-									else if (resultArray[0]=='SUCCESS'){
-											
-												//-----------------
-												$("#myerror_s_report_ord_tr").html(resultArray[1]);
-	
-	
-									
-								}else{		
-									$("#wait_image_ord_tr").hide();				
-									$("#myerror_s_report_ord_tr").html('Network Timeout. Please check your Internet connection.');
-									}
-							}
-						  }
-				 });//end ajax
-		$.afui.loadContent("#page_report_ord_tr",true,true,'right');
-	}
-}
 //========================Detail Report============
 function detail_report_doctor() {	
 	$("#wait_image_doctor").show();
