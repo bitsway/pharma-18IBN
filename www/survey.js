@@ -8438,7 +8438,7 @@ function summary_report_doctor_tr(marketIdName) {
 		var se_market_doc_tr=marketIdName.split('|')[1]	
 	
 	
-		alert (localStorage.base_url+'report_summary_ord_tr?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&rep_id_report='+localStorage.rep_id_report_doc+'&se_market_report='+se_market_doc_tr+'&date_year='+date_year+'&date_month='+date_month+'&user_type='+localStorage.user_type)
+		//alert (localStorage.base_url+'report_summary_ord_tr?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&rep_id_report='+localStorage.rep_id_report_doc+'&se_market_report='+se_market_doc_tr+'&date_year='+date_year+'&date_month='+date_month+'&user_type='+localStorage.user_type)
 				$.ajax(localStorage.base_url+'report_summary_ord_tr?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&rep_id_report='+localStorage.rep_id_report_doc+'&se_market_report='+se_market_doc_tr+'&date_year='+date_year+'&date_month='+date_month+'&user_type='+localStorage.user_type,{
 									type: 'POST',
 									timeout: 30000,
