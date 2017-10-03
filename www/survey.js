@@ -1815,6 +1815,12 @@ function check_user() {
 													localStorage.unschedule_market_cmb_id=unscheduleMarketComb;
 													localStorage.market_cmb_list_cp=profileMarketComb;							
 
+
+													localStorage.visit_plan_marketlist_combo_tr=unscheduleMarketComb_tr;
+													$('#market_combo_id_lv_tr').empty();
+													$('#market_combo_id_lv_tr').append(localStorage.visit_plan_marketlist_combo_tr);							
+													
+													
 													//alert (localStorage.unschedule_market_cmb_id)
 													$('#market_combo_id_lv').empty();
 													$('#market_combo_id_lv').append(localStorage.unschedule_market_cmb_id);
