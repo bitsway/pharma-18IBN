@@ -1512,7 +1512,7 @@ function check_user() {
 	//Main
 
 	
-	//var  apipath_base_photo_dm='http://127.0.0.1:8000/demo/syncmobile_417_new/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
+	//var  apipath_base_photo_dm='http://127.0.0.1:8000/demo/syncmobile_417_new_ibn/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
 	//var  apipath_base_photo_dm ='http://127.0.0.1:8000/acme/syncmobile_417_new/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
 	
 	//var  apipath_base_photo_dm='http://a007.yeapps.com/acme/syncmobile_417_new/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
@@ -1605,7 +1605,7 @@ function check_user() {
 							//alert (localStorage.sync_date)
 							
 							//alert (localStorage.base_url+'check_user_pharma?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode)
-							$("#error_logintext").val(localStorage.base_url+'check_user_pharma?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode);
+							//$("#error_logintext").val(localStorage.base_url+'check_user_pharma?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode);
 	
 							$.ajax(localStorage.base_url+'check_user_pharma?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode,{
 								// cid:localStorage.cid,rep_id:localStorage.user_id,rep_pass:localStorage.user_pass,synccode:localStorage.synccode,
@@ -10319,7 +10319,92 @@ $.ajax(localStorage.report_url+'tourDelete_doc?cid='+localStorage.cid+'&rep_id='
 
 
 }
+//==========================microAdd Submit==================
+function microAddSubmit() {
+	$("#myerror_micro_add").html('' )
+	$("#wait_image_microAdd").show();
+	$("#btn_submit_micro_add").hide();
+	var market_Id=localStorage.visit_market_show.split('|')[1];
+	var market_name=localStorage.visit_market_show.split('|')[0];
+	
+	
+	mIdAdd=$("#mIdAdd").val()
+	mNameAdd=$("#mNameAdd").val()
+	
+	
+	//alert (dCategory)
+	if (mIdAdd=='' &  mNameAdd=='' ){
+		$("#myerror_micro_add").html('Please Complete Mandatory Fields.' )
+		$("#wait_image_microAdd").hide();
+		$("#btn_submit_micro_add").show();
+		//alert ('Mandatory')
+	}
+	else{
+	//alert (localStorage.base_url+'microunion_add_submit?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&route='+market_Id+'&routeName='+market_name+'&mIdAdd='+mIdAdd+'&mNameAdd='+mNameAdd)
+	
+	//$("#doctor_add").val(localStorage.base_url+'microunion_add_submit?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&route='+market_Id+'&routeName='+market_name+'&mIdAdd='+mIdAdd+'&mNameAdd='+mNameAdd)
+	
+		$.ajax(localStorage.base_url+'microunion_add_submit?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&route='+market_Id+'&routeName='+market_name+'&mIdAdd='+mIdAdd+'&mNameAdd='+mNameAdd,{
 
+								type: 'POST',
+								timeout: 30000,
+								error: function(xhr) {
+								 $("#wait_image_microAdd").hide();
+								 $("#myerror_micro_add").html('Network Timeout. Please check your Internet connection..');
+													},
+								success:function(data, status,xhr){	
+									 $("#wait_image_microAdd").hide();
+									 $("#myerror_micro_add").show();
+									 if (status!='success'){
+										$("#myerror_micro_add").html('Network Timeout. Please check your Internet connection...');
+										
+									 }
+									 else{	
+									 	var resultArray = data.replace('</START>','').replace('</END>','').split('<SYNCDATA>');	
+										
+								if (resultArray[0]=='FAILED'){
+											$("#myerror_micro_add").text(resultArray[1]);	
+											
+										}
+								else if (resultArray[0]=='SUCCESS'){	
+									var result_string=resultArray[1];
+									
+									$("#myerror_micro_add").html(result_string)
+									$("#btn_submit_micro_add").show();
+									mIdAdd=$("#mIdAdd").val('')
+									mNameAdd=$("#mNameAdd").val('')
+									
+									
+								
+							}else{	
+								 $("#wait_image_microAdd").hide();
+								 $("#myerror_micro_add").html('Network Timeout. Please check your Internet connection.');			
+								 $("#btn_submit_micro_add").show();
+								}
+						}
+					  }
+			 });//end ajax
+			
+	}//end else
+	
+	//$.afui.loadContent("#page_doctor_profile",true,true,'right');
+	
+}
+//=================AddMicro=========
+function page_addMicro() {
+	 $("#myerror_micro_add").html('' )
+	 $("#wait_image_microAdd").hide();
+	 $("#btn_submit_micro_add").show();
+	var market_Id=localStorage.visit_market_show.split('|')[1];
+	//	===================CtStr, Spciality=========						
+	var dCategory=localStorage.catStr											
+	catList=dCategory.split(',')
+	$('#dCategoryAdd').empty();
+      
+	
+
+	$.afui.loadContent("#page_micro_add",true,true,'right');
+}
 //====================Doctor Add
 function page_addDoc() {
 	 $("#myerror_doctor_add").html('' )
@@ -10478,8 +10563,8 @@ function page_dList() {
 	  $("#error_dList").html('' )
 	  $("#wait_image_dList").show();
 	  var market_Id=localStorage.visit_market_show.split('|')[1];
-	//var visitDocId=localStorage.visit_client.split('|')[1]	
-	$("#error_dListTxt").val(localStorage.report_url+'doc_list?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode)
+	//alert (localStorage.report_url+'doc_list?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode)
+	//$("#error_dListTxt").val(localStorage.report_url+'doc_list?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode)
 	//alert (localStorage.report_url+'doc_list?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode)
   $.ajax(localStorage.report_url+'doc_list?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode,{
 
@@ -10505,7 +10590,9 @@ function page_dList() {
 								else if (resultArray[0]=='SUCCESS'){	
 									var result_string=resultArray[1];
 									var dList=resultArray[1];
-									$("#dList").html(dList);	
+									var microList=resultArray[2];
+									$("#dList").html(dList);
+									$("#microList").html(microList);	
 
 								
 							}else{	
@@ -10579,6 +10666,56 @@ function confirmDoc(docid) {
 							}else{	
 								 $("#wait_image_docConAdd").hide();
 								 $("#myerror_doctorCon_add").html('Network Timeout. Please check your Internet connection.');
+								}
+						}
+					  }
+			 });//end ajax*/
+	
+	
+	
+}
+function confirmMicro(micro) {
+	$("#wait_image_dList").show();
+	$("#error_dListTxt").html('');
+	var area_Id=micro.split('|')[0];
+	var micro_Id=micro.split('|')[1];
+	  
+	//alert (localStorage.report_url+'microConfirm?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&area_Id='+area_Id+'&micro_Id='+micro_Id)
+	//$.afui.loadContent("#page_doc_confirm",true,true,'right');
+  $.ajax(localStorage.report_url+'microConfirm?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&area_Id='+area_Id+'&micro_Id='+micro_Id,{
+
+								type: 'POST',
+								timeout: 30000,
+								error: function(xhr) {
+								 $("#wait_image_dList").hide();
+								 $("#error_dListTxt").html('Network Timeout. Please check your Internet connection..');
+													},
+								success:function(data, status,xhr){	
+									 $("#wait_image_dList").hide();
+									 if (status!='success'){
+										$("#error_dListTxt").html('Network Timeout. Please check your Internet connection...');
+										
+									 }
+									 else{	
+									 	var resultArray = data.replace('</START>','').replace('</END>','').split('<SYNCDATA>');	
+										
+								if (resultArray[0]=='FAILED'){
+											$("#error_dListTxt").html(resultArray[1]);	
+											
+										}
+								else if (resultArray[0]=='SUCCESS'){	
+									
+									var result_string=resultArray[1];
+									var dList=resultArray[1];
+									var microList=resultArray[2];
+									$("#dList").html(dList);
+									$("#microList").html(microList);	
+									
+
+								
+							}else{	
+								 $("#wait_image_dList").hide();
+								 $("#error_dListTxt").html('Network Timeout. Please check your Internet connection..');
 								}
 						}
 					  }

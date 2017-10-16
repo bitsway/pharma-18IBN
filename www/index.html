@@ -530,7 +530,76 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
     </div>    
     
     
+<div class="view" id="page_report_PaySlip_trView">
+        <div class="pages">
+         <header><h3 align="center" style="font-size:18px; font-weight:normal; color:#F8F8F8"> <div id="report_header_PaySlip" align="center"> Pay Slip </div></h3></header> 
+            <div class="panel" id="page_report_PaySlip_tr" style="background-color:#EDFEED">
+            </br></br></br></br>
+                <!--<div class="card">-->
+                    <!--<h1>Sync</h1>-->
+<!--                   <input id="myerror_s_report_doctortxt" name="myerror_s_report_doctortxt" type="text"  >-->
+				
+                     <div id="myerror_s_report_PaySlip_tr"  style="overflow:scroll"></div>               
+				
+						
+						<!--<div id="report_PaySlip_tr" style="color:#C00; overflow:scroll"></div>  --> 
+						
+												
+					
+					  		
+                            <img id="wait_image_PaySlip_tr" style="width:50px" src="loading.gif" alt="">	
+                           
+				
+				
+			
+				
+                    </div>
+                    
+               <!-- </div>-->
+            </div>
+       
+        <footer>
+		<a onClick="page_reports_dcr()" class="icon left" ></a>
+        <a onClick="page_reports_dcr()"  ></a>
+         
+		</footer>
+    </div>   
     
+    
+    <div class="view" id="page_report_ExpenseSlip_trView">
+        <div class="pages">
+         <header><h3 align="center" style="font-size:18px; font-weight:normal; color:#F8F8F8"> <div id="report_header_ExpenseSlip" align="center"> Expense Slip </div></h3></header> 
+            <div class="panel" id="page_report_ExpenseSlip_tr" style="background-color:#EDFEED">
+            </br></br></br></br>
+                <!--<div class="card">-->
+                    <!--<h1>Sync</h1>-->
+<!--                   <input id="myerror_s_report_doctortxt" name="myerror_s_report_doctortxt" type="text"  >-->
+				
+                     <div id="myerror_s_report_ExpenseSlip_tr"  style="overflow:scroll"></div>               
+				
+						
+						<!--<div id="report_PaySlip_tr" style="color:#C00; overflow:scroll"></div>  --> 
+						
+												
+					
+					  		
+                            <img id="wait_image_ExpenseSlip_tr" style="width:50px" src="loading.gif" alt="">	
+                           
+				
+				
+			
+				
+                    </div>
+                    
+               <!-- </div>-->
+            </div>
+       
+        <footer>
+		<a onClick="page_reports_dcr()" class="icon left" ></a>
+        <a onClick="page_reports_dcr()"  ></a>
+         
+		</footer>
+    </div>        
                          
    <!--   ================================Visit====================    -->  
 
@@ -1211,13 +1280,31 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
                         
 					  </tr>
 			  </table>
-
-		
+              </br></br>
+              
+              <table width="100%" border="0" cellpadding="0" cellspacing="0">
+					  <tr>
+						<td >Shift
+                         </td>
+                         <td ><input type="radio" name="v_shift" value='Morning' id="v_shift_M" >  <label for="v_shift_M"><font style=" font-size:10px">Morning</font></label>
+                         </td>
+                          
+						<td > <input type="radio" name="v_shift" value='Evening' id="v_shift_E" >  <label for="v_shift_E"><font style=" font-size:10px">Evening</font></label>
+                        </td>
+                        <td >
+                        </td>
+                        
+                        
+                        
+					  </tr>
+			  </table>
+		 </br></br>
+		 <input type="text" name="doc_feedback"  maxlength="50"  id="doc_feedback" placeholder="Feedback/Note/Place of Work"  >
                 </form>
 
                 <input type="hidden" name="doc_others"  maxlength="50"  id="doc_others" placeholder="Others"  >
                 
-                <input type="hidden" name="doc_feedback"  maxlength="50"  id="doc_feedback" placeholder="Feedback/Note/Place of Work"  >
+               
                 
 				
 			            
@@ -2607,6 +2694,8 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 					</table>
     				<div id="doctor_report_button_tr"> </div>
                     <div id="client_report_button_tr"> </div>
+                    <div id="report_others_tr"> </div>
+                    
            <br>
 				<br>
        <!-- </div>-->
@@ -5123,4 +5212,4 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
     
 </body>
 
-</html>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+</html>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>

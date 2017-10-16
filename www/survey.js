@@ -284,6 +284,9 @@ var  apipath ='http://a007.yeapps.com/acme/medSearch/'
 	$('#client_report_button_tr').empty();
 	$('#client_report_button_tr').append(localStorage.report_button_tr).trigger('create');
 	
+	$('#report_others_tr').empty();
+	$('#report_others_tr').append(localStorage.report_others_tr).trigger('create');
+	
 	
 	//set doctor
 	$('#doctor_campaign_list_tbl').html(localStorage.product_tbl_str_doc_campaign);
@@ -461,6 +464,7 @@ function saved_Doc_set(i) {
 	var v_with=docShowList[12]
 	var market_Id=docShowList[13]
 	var doc_others=docShowList[14]
+	var v_shift=docShowList[15]
 	
 	
 	//alert ('sadasf')
@@ -477,7 +481,8 @@ function saved_Doc_set(i) {
 	if (v_with.split('|')[1]!=''){$("#v_with_MPO").prop('checked', true)}
 	if (v_with.split('|')[2]!=''){$("#v_with_RSM").prop('checked', true);}
 
-	
+	if (v_shift='Morning'){$("#v_shift_M").prop('checked', true);}
+	if (v_shift='Evening'){$("#v_shift_E").prop('checked', true);}
 	
 	$("#doc_feedback").val(notes)
 	$("#doc_others").val(doc_others);
@@ -1941,6 +1946,9 @@ localStorage.report_button_tr='<input type="submit" id="loginButton" onClick="s_
 										//localStorage.doctor_report_button='<a data-role="button" onClick="detail_report_doctor()" >DCR Report</a>'
 										
 	localStorage.prescription_report_button='<input type="submit" id="loginButton" onClick="summary_report_prescription();"  style="width:100%; height:50px; background-color:#09C; color:#FFF; font-size:20px" value="   Prescription Count     "   /></br><input type="submit" id="loginButton" onClick="detail_report_prescription();"  style="width:100%; height:50px; background-color:#09C; color:#FFF; font-size:20px" value="   Prescription Detail     "   />'
+	
+	
+	localStorage.report_others_tr	='<input type="submit" id="loginButton" onClick="pay_tr_next ();"  style="width:100%; height:50px; background-color:#09C; color:#FFF; font-size:20px" value="   Pay Slip      "   /></br><input type="submit" id="loginButton" onClick="expense_tr_next();"  style="width:100%; height:50px; background-color:#09C; color:#FFF; font-size:20px" value="   Expense Slip     "   />'
 										
 										localStorage.prescription_report_button=''
 													}	
@@ -1958,6 +1966,9 @@ localStorage.report_button_tr='<input type="submit" id="loginButton" onClick="s_
 													$('#client_report_button_tr').empty();
 													$('#client_report_button_tr').append(localStorage.report_button_tr).trigger('create');
 													
+													
+													$('#report_others_tr').empty();
+													$('#report_others_tr').append(localStorage.report_others_tr).trigger('create');
 														
 										// alert (localStorage.doctor_report_button);						 
 															
@@ -7232,10 +7243,14 @@ function visitSubmit_doc(){
 	var v_with_AM=$("input[name=v_with_AM]:checked").val(); if (v_with_AM==undefined){v_with_AM=''}
 	var v_with_MPO=$("input[name=v_with_MPO]:checked").val(); if (v_with_MPO==undefined){v_with_MPO=''}
 	var v_with_RSM=$("input[name=v_with_RSM]:checked").val(); if (v_with_RSM==undefined){v_with_RSM=''}
+	
 	//alert (v_with_AM)
 	var v_with=v_with_AM+"|"+v_with_MPO+"|"+v_with_RSM
 	//v_with=v_withGet.replace('undefined')
 	//alert (v_with)
+	
+	var v_shift=$("input[name=v_shift]:checked").val()
+	
 	if (lat=='' || lat==0 || longitude=='' || longitude==0 ){
 							
 		lat=localStorage.latitude
@@ -7282,8 +7297,8 @@ function visitSubmit_doc(){
 												//$("#errorChkVSubmit").html(msg1);
 												
 											// $("#errorChkVSubmit_doc_t").html(localStorage.base_url+'doctor_visit_submit_pharma?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&client_id='+visitClientId+'&visit_type='+visit_type+'&schedule_date='+scheduled_date+'&msg='+msg+'&lat='+lat+'&long='+longitude+'&v_with='+v_with+'&route='+market_Id+'&doc_others='+doc_others)
-											
-											 $("#errorChkVSubmit_doc_t").val(localStorage.base_url+'doctor_visit_submit_pharma?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&client_id='+visitClientId+'&visit_type='+visit_type+'&schedule_date='+scheduled_date+'&msg='+encodeURI(msg)+'&lat='+lat+'&long='+longitude+'&v_with='+v_with+'&route='+market_Id+'&doc_others='+doc_others+'&location_detail='+localStorage.location_detail+'imageName='+imageName)
+											// alert (localStorage.base_url+'doctor_visit_submit_pharma?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&client_id='+visitClientId+'&visit_type='+visit_type+'&schedule_date='+scheduled_date+'&msg='+encodeURI(msg)+'&lat='+lat+'&long='+longitude+'&v_with='+v_with+'&route='+market_Id+'&doc_others='+doc_others+'&location_detail='+localStorage.location_detail+'&imageName='+imageName+'&v_shift='+v_shift)
+											 $("#errorChkVSubmit_doc_t").val(localStorage.base_url+'doctor_visit_submit_pharma?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&client_id='+visitClientId+'&visit_type='+visit_type+'&schedule_date='+scheduled_date+'&msg='+encodeURI(msg)+'&lat='+lat+'&long='+longitude+'&v_with='+v_with+'&route='+market_Id+'&doc_others='+doc_others+'&location_detail='+localStorage.location_detail+'&imageName='+imageName+'&v_shift='+v_shift)
 												// ajax-------
 												//alert (localStorage.location_error);
 											if ( localStorage.location_error==2){
@@ -7293,7 +7308,7 @@ function visitSubmit_doc(){
 												$("#visit_submit_doc").hide();
 												$("#wait_image_visit_submit_doc").show();
 												//alert (localStorage.base_url+'doctor_visit_submit_pharma?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&client_id='+visitClientId+'&visit_type='+visit_type+'&schedule_date='+scheduled_date+'&msg=' +encodeURI(msg)+'&lat='+lat+'&long='+longitude+'&v_with='+v_with+'&route='+market_Id+'&doc_others='+doc_others+'&location_detail='+localStorage.location_detail+'imageName='+imageName)	
-										$.ajax(localStorage.base_url+'doctor_visit_submit_pharma?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&client_id='+visitClientId+'&visit_type='+visit_type+'&schedule_date='+scheduled_date+'&msg=' +encodeURI(msg)+'&lat='+lat+'&long='+longitude+'&v_with='+v_with+'&route='+market_Id+'&doc_others='+doc_others+'&location_detail='+localStorage.location_detail+'imageName='+imageName,{
+										$.ajax(localStorage.base_url+'doctor_visit_submit_pharma?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&client_id='+visitClientId+'&visit_type='+visit_type+'&schedule_date='+scheduled_date+'&msg=' +encodeURI(msg)+'&lat='+lat+'&long='+longitude+'&v_with='+v_with+'&route='+market_Id+'&doc_others='+doc_others+'&location_detail='+localStorage.location_detail+'&imageName='+imageName+'&v_shift='+v_shift,{
 										// cid:localStorage.cid,rep_id:localStorage.user_id,rep_pass:localStorage.user_pass,synccode:localStorage.synccode,
 										type: 'POST',
 										timeout: 30000,
@@ -7967,7 +7982,7 @@ function saveDocvisit(){
 	var v_with_RSM=$("input[name=v_with_RSM]:checked").val(); if (v_with_RSM==undefined){v_with_RSM=''}
 	//alert (v_with_AM)
 	var v_with=v_with_AM+"|"+v_with_MPO+"|"+v_with_RSM
-	
+	var v_shift=$("input[name=v_shift]:checked").val();
 	if (lat=='' || lat==0 || longitude=='' || longitude==0 ){
 							
 		lat=localStorage.latitude
@@ -8012,7 +8027,7 @@ function saveDocvisit(){
 							//var docSaveData=localStorage.docSaveData
 							//alert (localStorage.visit_client+'<d>'+visitClientId+'<d>'+visit_type+'<d>'+scheduled_date+'<d>'+encodeURI(msg)+'<d>'+lat+'<d>'+longitude+'<d>'+v_with+'<d>'+market_Id+'<d>'+doc_others+'<doc>')
 							//alert ('sdas')
-							var doctor_visit_save=docSaveData+visitClientName+'<d>'+localStorage.visit_market_show+'<d>'+visitClientId+'<d>'+visit_type+'<d>'+scheduled_date+'<d>'+localStorage.productSampleStr+'<d>'+localStorage.productGiftStr+'<d>'+localStorage.campaign_doc_str+'<d>'+localStorage.productppmStr+'<d>'+notes+'<d>'+lat+'<d>'+longitude+'<d>'+v_with+'<d>'+market_Id+'<d>'+doc_others+'<d>'+localStorage.visit_client+'<doc>'
+							var doctor_visit_save=docSaveData+visitClientName+'<d>'+localStorage.visit_market_show+'<d>'+visitClientId+'<d>'+visit_type+'<d>'+scheduled_date+'<d>'+localStorage.productSampleStr+'<d>'+localStorage.productGiftStr+'<d>'+localStorage.campaign_doc_str+'<d>'+localStorage.productppmStr+'<d>'+notes+'<d>'+lat+'<d>'+longitude+'<d>'+v_with+'<d>'+market_Id+'<d>'+doc_others+'<d>'+localStorage.visit_client+'<d>'+v_shift+'<doc>'
 							
 							localStorage.docSaveData=doctor_visit_save
 					//alert (localStorage.docSaveData)
@@ -9127,6 +9142,19 @@ function summary_report_doctor() {
 	
 }
 //==============================
+function pay_tr_next() {
+	$('#market_combo_id_lv_tr').empty();
+	$('#market_combo_id_lv_tr').append(localStorage.visit_plan_marketlist_combo_tr);
+	localStorage.reportD='PaySlip'
+	$.afui.loadContent("#page_market_tr",true,true,'right');
+}
+function expense_tr_next() {
+	$('#market_combo_id_lv_tr').empty();
+	$('#market_combo_id_lv_tr').append(localStorage.visit_plan_marketlist_combo_tr);
+	localStorage.reportD='ExpenseSlip'
+	$.afui.loadContent("#page_market_tr",true,true,'right');
+}
+
 function s_order_summary_report_tr_next() {
 	$('#market_combo_id_lv_tr').empty();
 	$('#market_combo_id_lv_tr').append(localStorage.visit_plan_marketlist_combo_tr);
@@ -9192,7 +9220,7 @@ function summary_report_doctor_tr(marketIdName) {
 	if  (localStorage.reportD=='OrdReport'){
 		
 		$("#wait_image_ord").show();		
-		$("#report_ord_tr").html("");
+		$("#myerror_s_report_ord_tr").html("");
 		
 		var date_year=$("#date_year").val();
 		var date_month=$("#date_month").val();	
@@ -9235,6 +9263,101 @@ function summary_report_doctor_tr(marketIdName) {
 						  }
 				 });//end ajax
 		$.afui.loadContent("#page_report_ord_tr",true,true,'right');
+	}
+	if  (localStorage.reportD=='PaySlip'){
+		
+		$("#wait_image_PaySlip_tr").show();		
+		$("#myerror_s_report_PaySlip_tr").html("");
+		
+		var date_year=$("#date_year").val();
+		var date_month=$("#date_month").val();	
+		var se_market_doc_tr=marketIdName.split('|')[1]	
+	
+	
+		//alert (localStorage.base_url+'report_summary_ord_tr?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&rep_id_report='+localStorage.rep_id_report_doc+'&se_market_report='+se_market_doc_tr+'&date_year='+date_year+'&date_month='+date_month+'&user_type='+localStorage.user_type)
+				$.ajax(localStorage.base_url+'report_summary_PaySlip_tr?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&rep_id_report='+localStorage.rep_id_report_doc+'&se_market_report='+se_market_doc_tr+'&date_year='+date_year+'&date_month='+date_month+'&user_type='+localStorage.user_type,{
+									type: 'POST',
+									timeout: 30000,
+									error: function(xhr) {
+									$("#wait_image_PaySlip_tr").hide();	
+									$("#myerror_s_report_PaySlip_tr").html('Network Timeout. Please check your Internet connection..');
+														},
+									success:function(data, status,xhr){	
+										$("#wait_image_PaySlip_tr").hide();
+										 if (status!='success'){
+											$("#myerror_s_report_PaySlip_tr").html('Network Timeout. Please check your Internet connection...');
+											
+										 }
+										 else{	
+											var resultArray = data.replace('</START>','').replace('</END>','').split('<SYNCDATA>');	
+											
+									if (resultArray[0]=='FAILED'){
+												$("#myerror_s_report_PaySlip_tr").text(resultArray[0]);	
+												
+											}
+									else if (resultArray[0]=='SUCCESS'){
+											
+												//-----------------
+												$("#myerror_s_report_PaySlip_tr").html(resultArray[1]);
+	
+	
+									
+								}else{		
+									$("#wait_image_PaySlip_tr").hide();				
+									$("#myerror_s_report_PaySlip_tr").html('Network Timeout. Please check your Internet connection.');
+									}
+							}
+						  }
+				 });//end ajax
+		$.afui.loadContent("#page_report_PaySlip_tr",true,true,'right');
+	}
+	
+	if  (localStorage.reportD=='ExpenseSlip'){
+		
+		$("#wait_image_ExpenseSlip_tr").show();		
+		$("#myerror_s_report_ExpenseSlip_tr").html("");
+		
+		var date_year=$("#date_year").val();
+		var date_month=$("#date_month").val();	
+		var se_market_doc_tr=marketIdName.split('|')[1]	
+	
+	
+		//alert (localStorage.base_url+'report_summary_ord_tr?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&rep_id_report='+localStorage.rep_id_report_doc+'&se_market_report='+se_market_doc_tr+'&date_year='+date_year+'&date_month='+date_month+'&user_type='+localStorage.user_type)
+				$.ajax(localStorage.base_url+'report_summary_ExpenseSlip_tr?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&rep_id_report='+localStorage.rep_id_report_doc+'&se_market_report='+se_market_doc_tr+'&date_year='+date_year+'&date_month='+date_month+'&user_type='+localStorage.user_type,{
+									type: 'POST',
+									timeout: 30000,
+									error: function(xhr) {
+									$("#wait_image_ExpenseSlip_tr").hide();	
+									$("#myerror_s_report_ExpenseSlip_tr").html('Network Timeout. Please check your Internet connection..');
+														},
+									success:function(data, status,xhr){	
+										$("#wait_image_ExpenseSlip_tr").hide();
+										 if (status!='success'){
+											$("#myerror_s_report_ExpenseSlip_tr").html('Network Timeout. Please check your Internet connection...');
+											
+										 }
+										 else{	
+											var resultArray = data.replace('</START>','').replace('</END>','').split('<SYNCDATA>');	
+											
+									if (resultArray[0]=='FAILED'){
+												$("#myerror_s_report_ExpenseSlip_tr").text(resultArray[0]);	
+												
+											}
+									else if (resultArray[0]=='SUCCESS'){
+											
+												//-----------------
+												$("#myerror_s_report_ExpenseSlip_tr").html(resultArray[1]);
+	
+	
+									
+								}else{		
+									$("#wait_image_ExpenseSlip_tr").hide();				
+									$("#myerror_s_report_ExpenseSlip_tr").html('Network Timeout. Please check your Internet connection.');
+									}
+							}
+						  }
+				 });//end ajax
+		$.afui.loadContent("#page_report_ExpenseSlip_tr",true,true,'right');
 	}
 }
 
