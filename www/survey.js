@@ -10476,11 +10476,11 @@ function microAddSubmit() {
 		$("#mIdAdd").val(mIdSP+'-'+market_Id)
 		mIdAdd=$("#mIdAdd").val()
 		//alert (mIdAdd)
-	//alert (localStorage.base_url+'microunion_add_submit?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&route='+market_Id+'&routeName='+market_name+'&mIdAdd='+mIdAdd+'&mNameAdd='+mNameAdd+'&type_combo='+type_combo)
+	//alert (localStorage.base_url+'microunion_add_submit?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&route='+market_Id+'&routeName='+market_name+'&mIdAdd='+encodeURI(mIdAdd)+'&mNameAdd='+encodeURI(mNameAdd)+'&type_combo='+encodeURI(type_combo))
 	
-	//$("#doctor_add").val(localStorage.base_url+'microunion_add_submit?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&route='+market_Id+'&routeName='+market_name+'&mIdAdd='+mIdAdd+'&mNameAdd='+mNameAdd+'&type_combo='+mNameAdd)
+	//$("#doctor_add").val(localStorage.base_url+'microunion_add_submit?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&route='+market_Id+'&routeName='+market_name+'&mIdAdd='+encodeURI(mIdAdd)+'&mNameAdd='+encodeURI(mNameAdd)+'&type_combo='+encodeURI(type_combo))
 	
-		$.ajax(localStorage.base_url+'microunion_add_submit?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&route='+market_Id+'&routeName='+market_name+'&mIdAdd='+mIdAdd+'&mNameAdd='+mNameAdd+'&mNameAdd='+mNameAdd+'&type_combo='+type_combo,{
+		$.ajax(localStorage.base_url+'microunion_add_submit?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&route='+market_Id+'&routeName='+market_name+'&mIdAdd='+encodeURI(mIdAdd)+'&mNameAdd='+encodeURI(mNameAdd)+'&type_combo='+encodeURI(type_combo),{
 
 								type: 'POST',
 								timeout: 30000,
