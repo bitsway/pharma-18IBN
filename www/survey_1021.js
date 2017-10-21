@@ -10451,31 +10451,19 @@ function microAddSubmit() {
 	var market_name=localStorage.visit_market_show.split('|')[0];
 	
 	
-	
+	mIdAdd=$("#mIdAdd").val()
 	mNameAdd=$("#mNameAdd").val()
 	type_combo=$("#type_combo").val()
 	
 	
 	//alert (dCategory)
-	if (mNameAdd=='' ){
+	if (mIdAdd=='' &  mNameAdd=='' ){
 		$("#myerror_micro_add").html('Please Complete Mandatory Fields.' )
 		$("#wait_image_microAdd").hide();
 		$("#btn_submit_micro_add").show();
 		//alert ('Mandatory')
 	}
 	else{
-		if (mNameAdd.length >30 ){
-			$("#myerror_micro_add").html('Name should be in 30 char' )
-			$("#wait_image_microAdd").hide();
-			$("#btn_submit_micro_add").show();
-			}
-		else{
-		mId=replace_special_char(mNameAdd)
-		
-		mIdSP=mId.replace(' ', '').toUpperCase();
-		$("#mIdAdd").val(mIdSP+'-'+market_Id)
-		mIdAdd=$("#mIdAdd").val()
-		//alert (mIdAdd)
 	//alert (localStorage.base_url+'microunion_add_submit?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&route='+market_Id+'&routeName='+market_name+'&mIdAdd='+mIdAdd+'&mNameAdd='+mNameAdd+'&type_combo='+type_combo)
 	
 	//$("#doctor_add").val(localStorage.base_url+'microunion_add_submit?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&route='+market_Id+'&routeName='+market_name+'&mIdAdd='+mIdAdd+'&mNameAdd='+mNameAdd+'&type_combo='+mNameAdd)
@@ -10522,7 +10510,7 @@ function microAddSubmit() {
 			 });//end ajax
 			
 	}//end else
-	}
+	
 	//$.afui.loadContent("#page_doctor_profile",true,true,'right');
 	
 }
