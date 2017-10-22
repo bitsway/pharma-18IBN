@@ -1950,7 +1950,7 @@ localStorage.report_button_tr='<input type="submit" id="loginButton" onClick="s_
 	
 	localStorage.report_others_tr	='<input type="submit" id="loginButton" onClick="pay_tr_next ();"  style="width:100%; height:50px; background-color:#09C; color:#FFF; font-size:20px" value="   Pay Slip      "   /></br><input type="submit" id="loginButton" onClick="expense_tr_next();"  style="width:100%; height:50px; background-color:#09C; color:#FFF; font-size:20px" value="   Expense Slip     "   />'
 										
-										localStorage.prescription_report_button=''
+										//localStorage.prescription_report_button=''
 													}	
 													
 													$('#doctor_report_button').empty();
