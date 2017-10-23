@@ -2275,14 +2275,14 @@ localStorage.report_button_tr='<input type="submit" id="loginButton" onClick="s_
 													 checkRequest()
 													}
 													checkInbox();
-													if (localStorage.user_type=='sup'){
-			$("#chemisVDiv").hide();
-			$("#chSaveDiv").hide();
-		}
-		else{
-			$("#chemisVDiv").show();
-			$("#chSaveDiv").show();
-		}
+													//if (localStorage.user_type=='sup'){
+//														$("#chemisVDiv").hide();
+//														$("#chSaveDiv").hide();
+//													}
+//													else{
+//														$("#chemisVDiv").show();
+//														$("#chSaveDiv").show();
+//													}
 													$.afui.loadContent("#pageHome",true,true,'right');
 													
 													set_doc_all();
