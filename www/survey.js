@@ -316,16 +316,16 @@ var  apipath ='http://a007.yeapps.com/acme/medSearch/'
 			$("#cid").val(localStorage.cid);
 			$("#user_id").val(localStorage.user_id);
 			$("#user_pass").val(localStorage.user_pass);
-			if (localStorage.user_type=='sup'){
-			$("#chemisVDiv").hide();
-			$("#chSaveDiv").hide();
-			
-			
-			}
-			else{
-				$("#chemisVDiv").show();
-				$("#chSaveDiv").show();
-			}
+			//if (localStorage.user_type=='sup'){
+//			$("#chemisVDiv").hide();
+//			$("#chSaveDiv").hide();
+//			
+//			
+//			}
+//			else{
+//				$("#chemisVDiv").show();
+//				$("#chSaveDiv").show();
+//			}
 			//alert (localStorage.synced)
 			$.afui.loadContent("#pageHome",true,true,'right');
 			
@@ -517,14 +517,14 @@ function homePage() {
 
 	//if ((localStorage.synced=='YES') & (localStorage.sync_date==today)){
 	if (localStorage.synced=='YES'){
-		if (localStorage.user_type=='sup'){
-			$("#chemisVDiv").hide();
-			$("#chSaveDiv").hide();
-		}
-		else{
-			$("#chemisVDiv").show();
-			$("#chSaveDiv").show();
-		}
+		//if (localStorage.user_type=='sup'){
+//			$("#chemisVDiv").hide();
+//			$("#chSaveDiv").hide();
+//		}
+//		else{
+//			$("#chemisVDiv").show();
+//			$("#chSaveDiv").show();
+//		}
 		
 		$.afui.loadContent("#pageHome",true,true,'right');
 	}
