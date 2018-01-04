@@ -297,6 +297,9 @@ var  apipath ='http://a007.yeapps.com/acme/medSearch/'
 	$("#product_total_cart").html(localStorage.show_total);
 	$("#product_total_last").html(localStorage.show_total);	
 	
+	//$('#with_whom').empty();
+//	$('#with_whom').html(localStorage.with_whomShow);
+	
 	
 	var currentDate = new Date()
 	var day = currentDate.getDate();if(parseInt(day)<9)	{day="0" + day};
@@ -316,16 +319,16 @@ var  apipath ='http://a007.yeapps.com/acme/medSearch/'
 			$("#cid").val(localStorage.cid);
 			$("#user_id").val(localStorage.user_id);
 			$("#user_pass").val(localStorage.user_pass);
-			if (localStorage.user_type=='sup'){
-			$("#chemisVDiv").hide();
-			$("#chSaveDiv").hide();
-			
-			
-			}
-			else{
-				$("#chemisVDiv").show();
-				$("#chSaveDiv").show();
-			}
+			//if (localStorage.user_type=='sup'){
+//			$("#chemisVDiv").hide();
+//			$("#chSaveDiv").hide();
+//			
+//			
+//			}
+//			else{
+//				$("#chemisVDiv").show();
+//				$("#chSaveDiv").show();
+//			}
 			//alert (localStorage.synced)
 			$.afui.loadContent("#pageHome",true,true,'right');
 			
@@ -517,14 +520,14 @@ function homePage() {
 
 	//if ((localStorage.synced=='YES') & (localStorage.sync_date==today)){
 	if (localStorage.synced=='YES'){
-		if (localStorage.user_type=='sup'){
-			$("#chemisVDiv").hide();
-			$("#chSaveDiv").hide();
-		}
-		else{
-			$("#chemisVDiv").show();
-			$("#chSaveDiv").show();
-		}
+		//if (localStorage.user_type=='sup'){
+//			$("#chemisVDiv").hide();
+//			$("#chSaveDiv").hide();
+//		}
+//		else{
+//			$("#chemisVDiv").show();
+//			$("#chSaveDiv").show();
+//		}
 		
 		$.afui.loadContent("#pageHome",true,true,'right');
 	}
@@ -1509,6 +1512,11 @@ function afterSync(){
 		localStorage.op_Y=''
 		localStorage.op_Z=''
 		localStorage.opProductStr=''
+		localStorage.with_whomShow=''
+		
+		
+		
+		
 }
 function check_user() {	
 	var cid=$("#cid").val().toUpperCase();
@@ -1517,14 +1525,14 @@ function check_user() {
 	//Main
 
 	
-	//var  apipath_base_photo_dm='http://127.0.0.1:8000/demo/syncmobile_417_new_ibn/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
+	var  apipath_base_photo_dm='http://127.0.0.1:8000/demo/syncmobile_417_new_ibn/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
 	//var  apipath_base_photo_dm ='http://127.0.0.1:8000/acme/syncmobile_417_new/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
 	
 	//var  apipath_base_photo_dm='http://a007.yeapps.com/acme/syncmobile_417_new/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
 
 
 
-   var apipath_base_photo_dm ='http://e2.businesssolutionapps.com/welcome/dmpath_live_new/get_path?CID='+cid +'&HTTPPASS=e99business321cba'
+  // var apipath_base_photo_dm ='http://e2.businesssolutionapps.com/welcome/dmpath_live_new/get_path?CID='+cid +'&HTTPPASS=e99business321cba'
  
 	
 	var user_id=$("#user_id").val();
@@ -1682,6 +1690,7 @@ function check_user() {
 													localStorage.marketTourStr=resultArray[32]
 													localStorage.docTThisMonthRow=resultArray[33]
 													localStorage.prProductStr=resultArray[34]
+													//localStorage.with_whom=resultArray[35]
 													//alert (localStorage.marketStrDoc)
 													
 													//alert (localStorage.menu)
@@ -1950,7 +1959,7 @@ localStorage.report_button_tr='<input type="submit" id="loginButton" onClick="s_
 	
 	localStorage.report_others_tr	='<input type="submit" id="loginButton" onClick="pay_tr_next ();"  style="width:100%; height:50px; background-color:#09C; color:#FFF; font-size:20px" value="   Pay Slip      "   /></br><input type="submit" id="loginButton" onClick="expense_tr_next();"  style="width:100%; height:50px; background-color:#09C; color:#FFF; font-size:20px" value="   Expense Slip     "   />'
 										
-										localStorage.prescription_report_button=''
+										//localStorage.prescription_report_button=''
 													}	
 													
 													$('#doctor_report_button').empty();
@@ -2275,15 +2284,32 @@ localStorage.report_button_tr='<input type="submit" id="loginButton" onClick="s_
 													 checkRequest()
 													}
 													checkInbox();
-													if (localStorage.user_type=='sup'){
-			$("#chemisVDiv").hide();
-			$("#chSaveDiv").hide();
-		}
-		else{
-			$("#chemisVDiv").show();
-			$("#chSaveDiv").show();
-		}
+													//if (localStorage.user_type=='sup'){
+//														$("#chemisVDiv").hide();
+//														$("#chSaveDiv").hide();
+//													}
+//													else{
+//														$("#chemisVDiv").show();
+//														$("#chSaveDiv").show();
+//													}
 													$.afui.loadContent("#pageHome",true,true,'right');
+													
+													
+													if (localStorage.with_whom!=''){
+														var with_whom='<table width="100%" border="0" cellpadding="0" cellspacing="0"> <tr>'
+														var with_whomList=localStorage.with_whom.split('<fdfd>');
+														for (j=0; j < with_whomList; j++){
+														with_whom=with_whom+'<td ><input type="checkbox" name="v_with_AM" value="'+str(with_whomList[j])+'" id="v_with_AM" >  <label for="v_with_AM"><font style=" font-size:10px">'+str(with_whomList[j])+'</font></label></td>'
+															
+														}
+														with_whom=with_whom+' </tr></table>'
+														localStorage.with_whomShow=with_whom
+														
+													}
+													$('#with_whom').empty();
+													$('#with_whom').html(localStorage.with_whomShow);
+													
+													
 													
 													set_doc_all();
 
@@ -9143,16 +9169,104 @@ function summary_report_doctor() {
 }
 //==============================
 function pay_tr_next() {
-	$('#market_combo_id_lv_tr').empty();
-	$('#market_combo_id_lv_tr').append(localStorage.visit_plan_marketlist_combo_tr);
-	localStorage.reportD='PaySlip'
-	$.afui.loadContent("#page_market_tr",true,true,'right');
+		$("#wait_image_PaySlip_tr").show();		
+		$("#myerror_s_report_PaySlip_tr").html("");
+		
+		var date_year=$("#date_year").val();
+		var date_month=$("#date_month").val();	
+		var se_market_doc_tr=''
+	
+	
+		//alert (localStorage.base_url+'report_summary_PaySlip_tr?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&rep_id_report='+localStorage.rep_id_report_doc+'&se_market_report='+se_market_doc_tr+'&date_year='+date_year+'&date_month='+date_month+'&user_type='+localStorage.user_type)
+				$.ajax(localStorage.base_url+'report_summary_PaySlip_tr?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&rep_id_report='+localStorage.rep_id_report_doc+'&se_market_report='+se_market_doc_tr+'&date_year='+date_year+'&date_month='+date_month+'&user_type='+localStorage.user_type,{
+									type: 'POST',
+									timeout: 30000,
+									error: function(xhr) {
+									$("#wait_image_PaySlip_tr").hide();	
+									$("#myerror_s_report_PaySlip_tr").html('Network Timeout. Please check your Internet connection..');
+														},
+									success:function(data, status,xhr){	
+										$("#wait_image_PaySlip_tr").hide();
+										 if (status!='success'){
+											$("#myerror_s_report_PaySlip_tr").html('Network Timeout. Please check your Internet connection...');
+											
+										 }
+										 else{	
+											var resultArray = data.replace('</START>','').replace('</END>','').split('<SYNCDATA>');	
+											
+									if (resultArray[0]=='FAILED'){
+												$("#myerror_s_report_PaySlip_tr").text(resultArray[0]);	
+												
+											}
+									else if (resultArray[0]=='SUCCESS'){
+											
+												//-----------------
+												$("#myerror_s_report_PaySlip_tr").html(resultArray[1]);
+	
+	
+									
+								}else{		
+									$("#wait_image_PaySlip_tr").hide();				
+									$("#myerror_s_report_PaySlip_tr").html('Network Timeout. Please check your Internet connection.');
+									}
+							}
+						  }
+				 });//end ajax
+		$.afui.loadContent("#page_report_PaySlip_tr",true,true,'right');
+	//$('#market_combo_id_lv_tr').empty();
+//	$('#market_combo_id_lv_tr').append(localStorage.visit_plan_marketlist_combo_tr);
+//	localStorage.reportD='PaySlip'
+//	$.afui.loadContent("#page_market_tr",true,true,'right');
 }
 function expense_tr_next() {
-	$('#market_combo_id_lv_tr').empty();
-	$('#market_combo_id_lv_tr').append(localStorage.visit_plan_marketlist_combo_tr);
-	localStorage.reportD='ExpenseSlip'
-	$.afui.loadContent("#page_market_tr",true,true,'right');
+	$("#wait_image_ExpenseSlip_tr").show();		
+//	$("#myerror_s_report_ExpenseSlip_tr").html("");
+//	
+	var date_year=$("#date_year").val();
+	var date_month=$("#date_month").val();	
+	var se_market_doc_tr=''
+	
+	//alert ('AA')
+		//alert (localStorage.base_url+'report_summary_ord_tr?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&rep_id_report='+localStorage.rep_id_report_doc+'&se_market_report='+se_market_doc_tr+'&date_year='+date_year+'&date_month='+date_month+'&user_type='+localStorage.user_type)
+				$.ajax(localStorage.base_url+'report_summary_ExpenseSlip_tr?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&rep_id_report='+localStorage.rep_id_report_doc+'&se_market_report='+se_market_doc_tr+'&date_year='+date_year+'&date_month='+date_month+'&user_type='+localStorage.user_type,{
+									type: 'POST',
+									timeout: 30000,
+									error: function(xhr) {
+									$("#wait_image_ExpenseSlip_tr").hide();	
+									$("#myerror_s_report_ExpenseSlip_tr").html('Network Timeout. Please check your Internet connection..');
+														},
+									success:function(data, status,xhr){	
+										$("#wait_image_ExpenseSlip_tr").hide();
+										 if (status!='success'){
+											$("#myerror_s_report_ExpenseSlip_tr").html('Network Timeout. Please check your Internet connection...');
+											
+										 }
+										 else{	
+											var resultArray = data.replace('</START>','').replace('</END>','').split('<SYNCDATA>');	
+											
+									if (resultArray[0]=='FAILED'){
+												$("#myerror_s_report_ExpenseSlip_tr").text(resultArray[0]);	
+												
+											}
+									else if (resultArray[0]=='SUCCESS'){
+											
+												//-----------------
+												$("#myerror_s_report_ExpenseSlip_tr").html(resultArray[1]);
+	
+	
+									
+								}else{		
+									$("#wait_image_ExpenseSlip_tr").hide();				
+									$("#myerror_s_report_ExpenseSlip_tr").html('Network Timeout. Please check your Internet connection.');
+									}
+							}
+						  }
+				 });//end ajax
+		$.afui.loadContent("#page_report_ExpenseSlip_tr",true,true,'right');
+	//$('#market_combo_id_lv_tr').empty();
+//	$('#market_combo_id_lv_tr').append(localStorage.visit_plan_marketlist_combo_tr);
+//	localStorage.reportD='ExpenseSlip'
+//	$.afui.loadContent("#page_market_tr",true,true,'right');
 }
 
 function s_order_summary_report_tr_next() {
@@ -9264,101 +9378,101 @@ function summary_report_doctor_tr(marketIdName) {
 				 });//end ajax
 		$.afui.loadContent("#page_report_ord_tr",true,true,'right');
 	}
-	if  (localStorage.reportD=='PaySlip'){
+	//if  (localStorage.reportD=='PaySlip'){
+		//
+//		$("#wait_image_PaySlip_tr").show();		
+//		$("#myerror_s_report_PaySlip_tr").html("");
+//		
+//		var date_year=$("#date_year").val();
+//		var date_month=$("#date_month").val();	
+//		var se_market_doc_tr=marketIdName.split('|')[1]	
+//	
+//	
+//		//alert (localStorage.base_url+'report_summary_ord_tr?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&rep_id_report='+localStorage.rep_id_report_doc+'&se_market_report='+se_market_doc_tr+'&date_year='+date_year+'&date_month='+date_month+'&user_type='+localStorage.user_type)
+//				$.ajax(localStorage.base_url+'report_summary_PaySlip_tr?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&rep_id_report='+localStorage.rep_id_report_doc+'&se_market_report='+se_market_doc_tr+'&date_year='+date_year+'&date_month='+date_month+'&user_type='+localStorage.user_type,{
+//									type: 'POST',
+//									timeout: 30000,
+//									error: function(xhr) {
+//									$("#wait_image_PaySlip_tr").hide();	
+//									$("#myerror_s_report_PaySlip_tr").html('Network Timeout. Please check your Internet connection..');
+//														},
+//									success:function(data, status,xhr){	
+//										$("#wait_image_PaySlip_tr").hide();
+//										 if (status!='success'){
+//											$("#myerror_s_report_PaySlip_tr").html('Network Timeout. Please check your Internet connection...');
+//											
+//										 }
+//										 else{	
+//											var resultArray = data.replace('</START>','').replace('</END>','').split('<SYNCDATA>');	
+//											
+//									if (resultArray[0]=='FAILED'){
+//												$("#myerror_s_report_PaySlip_tr").text(resultArray[0]);	
+//												
+//											}
+//									else if (resultArray[0]=='SUCCESS'){
+//											
+//												//-----------------
+//												$("#myerror_s_report_PaySlip_tr").html(resultArray[1]);
+//	
+//	
+//									
+//								}else{		
+//									$("#wait_image_PaySlip_tr").hide();				
+//									$("#myerror_s_report_PaySlip_tr").html('Network Timeout. Please check your Internet connection.');
+//									}
+//							}
+//						  }
+//				 });//end ajax
+//		$.afui.loadContent("#page_report_PaySlip_tr",true,true,'right');
+//	}
+	
+	//if  (localStorage.reportD=='ExpenseSlip'){
 		
-		$("#wait_image_PaySlip_tr").show();		
-		$("#myerror_s_report_PaySlip_tr").html("");
-		
-		var date_year=$("#date_year").val();
-		var date_month=$("#date_month").val();	
-		var se_market_doc_tr=marketIdName.split('|')[1]	
-	
-	
-		//alert (localStorage.base_url+'report_summary_ord_tr?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&rep_id_report='+localStorage.rep_id_report_doc+'&se_market_report='+se_market_doc_tr+'&date_year='+date_year+'&date_month='+date_month+'&user_type='+localStorage.user_type)
-				$.ajax(localStorage.base_url+'report_summary_PaySlip_tr?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&rep_id_report='+localStorage.rep_id_report_doc+'&se_market_report='+se_market_doc_tr+'&date_year='+date_year+'&date_month='+date_month+'&user_type='+localStorage.user_type,{
-									type: 'POST',
-									timeout: 30000,
-									error: function(xhr) {
-									$("#wait_image_PaySlip_tr").hide();	
-									$("#myerror_s_report_PaySlip_tr").html('Network Timeout. Please check your Internet connection..');
-														},
-									success:function(data, status,xhr){	
-										$("#wait_image_PaySlip_tr").hide();
-										 if (status!='success'){
-											$("#myerror_s_report_PaySlip_tr").html('Network Timeout. Please check your Internet connection...');
-											
-										 }
-										 else{	
-											var resultArray = data.replace('</START>','').replace('</END>','').split('<SYNCDATA>');	
-											
-									if (resultArray[0]=='FAILED'){
-												$("#myerror_s_report_PaySlip_tr").text(resultArray[0]);	
-												
-											}
-									else if (resultArray[0]=='SUCCESS'){
-											
-												//-----------------
-												$("#myerror_s_report_PaySlip_tr").html(resultArray[1]);
-	
-	
-									
-								}else{		
-									$("#wait_image_PaySlip_tr").hide();				
-									$("#myerror_s_report_PaySlip_tr").html('Network Timeout. Please check your Internet connection.');
-									}
-							}
-						  }
-				 });//end ajax
-		$.afui.loadContent("#page_report_PaySlip_tr",true,true,'right');
-	}
-	
-	if  (localStorage.reportD=='ExpenseSlip'){
-		
-		$("#wait_image_ExpenseSlip_tr").show();		
-		$("#myerror_s_report_ExpenseSlip_tr").html("");
-		
-		var date_year=$("#date_year").val();
-		var date_month=$("#date_month").val();	
-		var se_market_doc_tr=marketIdName.split('|')[1]	
-	
-	
-		//alert (localStorage.base_url+'report_summary_ord_tr?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&rep_id_report='+localStorage.rep_id_report_doc+'&se_market_report='+se_market_doc_tr+'&date_year='+date_year+'&date_month='+date_month+'&user_type='+localStorage.user_type)
-				$.ajax(localStorage.base_url+'report_summary_ExpenseSlip_tr?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&rep_id_report='+localStorage.rep_id_report_doc+'&se_market_report='+se_market_doc_tr+'&date_year='+date_year+'&date_month='+date_month+'&user_type='+localStorage.user_type,{
-									type: 'POST',
-									timeout: 30000,
-									error: function(xhr) {
-									$("#wait_image_ExpenseSlip_tr").hide();	
-									$("#myerror_s_report_ExpenseSlip_tr").html('Network Timeout. Please check your Internet connection..');
-														},
-									success:function(data, status,xhr){	
-										$("#wait_image_ExpenseSlip_tr").hide();
-										 if (status!='success'){
-											$("#myerror_s_report_ExpenseSlip_tr").html('Network Timeout. Please check your Internet connection...');
-											
-										 }
-										 else{	
-											var resultArray = data.replace('</START>','').replace('</END>','').split('<SYNCDATA>');	
-											
-									if (resultArray[0]=='FAILED'){
-												$("#myerror_s_report_ExpenseSlip_tr").text(resultArray[0]);	
-												
-											}
-									else if (resultArray[0]=='SUCCESS'){
-											
-												//-----------------
-												$("#myerror_s_report_ExpenseSlip_tr").html(resultArray[1]);
-	
-	
-									
-								}else{		
-									$("#wait_image_ExpenseSlip_tr").hide();				
-									$("#myerror_s_report_ExpenseSlip_tr").html('Network Timeout. Please check your Internet connection.');
-									}
-							}
-						  }
-				 });//end ajax
-		$.afui.loadContent("#page_report_ExpenseSlip_tr",true,true,'right');
-	}
+		//$("#wait_image_ExpenseSlip_tr").show();		
+//		$("#myerror_s_report_ExpenseSlip_tr").html("");
+//		
+//		var date_year=$("#date_year").val();
+//		var date_month=$("#date_month").val();	
+//		var se_market_doc_tr=marketIdName.split('|')[1]	
+//	
+//	
+//		//alert (localStorage.base_url+'report_summary_ord_tr?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&rep_id_report='+localStorage.rep_id_report_doc+'&se_market_report='+se_market_doc_tr+'&date_year='+date_year+'&date_month='+date_month+'&user_type='+localStorage.user_type)
+//				$.ajax(localStorage.base_url+'report_summary_ExpenseSlip_tr?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&rep_id_report='+localStorage.rep_id_report_doc+'&se_market_report='+se_market_doc_tr+'&date_year='+date_year+'&date_month='+date_month+'&user_type='+localStorage.user_type,{
+//									type: 'POST',
+//									timeout: 30000,
+//									error: function(xhr) {
+//									$("#wait_image_ExpenseSlip_tr").hide();	
+//									$("#myerror_s_report_ExpenseSlip_tr").html('Network Timeout. Please check your Internet connection..');
+//														},
+//									success:function(data, status,xhr){	
+//										$("#wait_image_ExpenseSlip_tr").hide();
+//										 if (status!='success'){
+//											$("#myerror_s_report_ExpenseSlip_tr").html('Network Timeout. Please check your Internet connection...');
+//											
+//										 }
+//										 else{	
+//											var resultArray = data.replace('</START>','').replace('</END>','').split('<SYNCDATA>');	
+//											
+//									if (resultArray[0]=='FAILED'){
+//												$("#myerror_s_report_ExpenseSlip_tr").text(resultArray[0]);	
+//												
+//											}
+//									else if (resultArray[0]=='SUCCESS'){
+//											
+//												//-----------------
+//												$("#myerror_s_report_ExpenseSlip_tr").html(resultArray[1]);
+//	
+//	
+//									
+//								}else{		
+//									$("#wait_image_ExpenseSlip_tr").hide();				
+//									$("#myerror_s_report_ExpenseSlip_tr").html('Network Timeout. Please check your Internet connection.');
+//									}
+//							}
+//						  }
+//				 });//end ajax
+//		$.afui.loadContent("#page_report_ExpenseSlip_tr",true,true,'right');
+//	}
 }
 
 //========================Detail Report============
@@ -10451,23 +10565,36 @@ function microAddSubmit() {
 	var market_name=localStorage.visit_market_show.split('|')[0];
 	
 	
-	mIdAdd=$("#mIdAdd").val()
+	
 	mNameAdd=$("#mNameAdd").val()
+	type_combo=$("#type_combo").val()
 	
 	
 	//alert (dCategory)
-	if (mIdAdd=='' &  mNameAdd=='' ){
+	if (mNameAdd=='' ){
 		$("#myerror_micro_add").html('Please Complete Mandatory Fields.' )
 		$("#wait_image_microAdd").hide();
 		$("#btn_submit_micro_add").show();
 		//alert ('Mandatory')
 	}
 	else{
-	//alert (localStorage.base_url+'microunion_add_submit?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&route='+market_Id+'&routeName='+market_name+'&mIdAdd='+mIdAdd+'&mNameAdd='+mNameAdd)
+		if (mNameAdd.length >30 ){
+			$("#myerror_micro_add").html('Name should be in 30 char' )
+			$("#wait_image_microAdd").hide();
+			$("#btn_submit_micro_add").show();
+			}
+		else{
+		mId=replace_special_char(mNameAdd)
+		
+		mIdSP=mId.replace(' ', '').toUpperCase();
+		$("#mIdAdd").val(mIdSP+'-'+market_Id)
+		mIdAdd=$("#mIdAdd").val()
+		//alert (mIdAdd)
+	//alert (localStorage.base_url+'microunion_add_submit?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&route='+market_Id+'&routeName='+market_name+'&mIdAdd='+encodeURI(mIdAdd)+'&mNameAdd='+encodeURI(mNameAdd)+'&type_combo='+encodeURI(type_combo))
 	
-	//$("#doctor_add").val(localStorage.base_url+'microunion_add_submit?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&route='+market_Id+'&routeName='+market_name+'&mIdAdd='+mIdAdd+'&mNameAdd='+mNameAdd)
+	//$("#doctor_add").val(localStorage.base_url+'microunion_add_submit?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&route='+market_Id+'&routeName='+market_name+'&mIdAdd='+encodeURI(mIdAdd)+'&mNameAdd='+encodeURI(mNameAdd)+'&type_combo='+encodeURI(type_combo))
 	
-		$.ajax(localStorage.base_url+'microunion_add_submit?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&route='+market_Id+'&routeName='+market_name+'&mIdAdd='+mIdAdd+'&mNameAdd='+mNameAdd,{
+		$.ajax(localStorage.base_url+'microunion_add_submit?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&route='+market_Id+'&routeName='+market_name+'&mIdAdd='+encodeURI(mIdAdd)+'&mNameAdd='+encodeURI(mNameAdd)+'&type_combo='+encodeURI(type_combo),{
 
 								type: 'POST',
 								timeout: 30000,
@@ -10509,7 +10636,7 @@ function microAddSubmit() {
 			 });//end ajax
 			
 	}//end else
-	
+	}
 	//$.afui.loadContent("#page_doctor_profile",true,true,'right');
 	
 }
@@ -10806,6 +10933,56 @@ function confirmMicro(micro) {
 	//alert (localStorage.report_url+'microConfirm?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&area_Id='+area_Id+'&micro_Id='+micro_Id)
 	//$.afui.loadContent("#page_doc_confirm",true,true,'right');
   $.ajax(localStorage.report_url+'microConfirm?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&area_Id='+area_Id+'&micro_Id='+micro_Id,{
+
+								type: 'POST',
+								timeout: 30000,
+								error: function(xhr) {
+								 $("#wait_image_dList").hide();
+								 $("#error_dListTxt").html('Network Timeout. Please check your Internet connection..');
+													},
+								success:function(data, status,xhr){	
+									 $("#wait_image_dList").hide();
+									 if (status!='success'){
+										$("#error_dListTxt").html('Network Timeout. Please check your Internet connection...');
+										
+									 }
+									 else{	
+									 	var resultArray = data.replace('</START>','').replace('</END>','').split('<SYNCDATA>');	
+										
+								if (resultArray[0]=='FAILED'){
+											$("#error_dListTxt").html(resultArray[1]);	
+											
+										}
+								else if (resultArray[0]=='SUCCESS'){	
+									
+									var result_string=resultArray[1];
+									var dList=resultArray[1];
+									var microList=resultArray[2];
+									$("#dList").html(dList);
+									$("#microList").html(microList);	
+									
+
+								
+							}else{	
+								 $("#wait_image_dList").hide();
+								 $("#error_dListTxt").html('Network Timeout. Please check your Internet connection..');
+								}
+						}
+					  }
+			 });//end ajax*/
+	
+	
+	
+}
+function deledteMicro(micro) {
+	$("#wait_image_dList").show();
+	$("#error_dListTxt").html('');
+	var area_Id=micro.split('|')[0];
+	var micro_Id=micro.split('|')[1];
+	  
+	//alert (localStorage.report_url+'deledteMicro?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&area_Id='+area_Id+'&micro_Id='+micro_Id)
+	//$.afui.loadContent("#page_doc_confirm",true,true,'right');
+  $.ajax(localStorage.report_url+'deledteMicro?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&area_Id='+area_Id+'&micro_Id='+micro_Id,{
 
 								type: 'POST',
 								timeout: 30000,

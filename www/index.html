@@ -113,7 +113,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
                      <input type="submit" id="loginButton" onClick="check_user();new_ps()"  style="width:100%; height:50px; background-color:#09C; color:#FFF; font-size:20px" value="     Sync     "   />
                    <!-- <a class='button' id="loginButton" onClick="check_user()"  data-transition='up-reveal:dismiss'>Sync</a>-->
                    </br></br></br>
-                   <input type="submit" id="doctorButton" onClick="doctor_sync();"  style="width:100%; height:50px; background-color:#09C; color:#FFF; font-size:20px" value="    Doctor & Generic Sync     "   />
+                   <!--<input type="submit" id="doctorButton" onClick="doctor_sync();"  style="width:100%; height:50px; background-color:#09C; color:#FFF; font-size:20px" value="    Doctor & Generic Sync     "   />-->
                     <div align="center"><img id="wait_image_login" style="" width="50px;" src="loading.gif" alt=""></div>
                     
                <!-- </div>-->
@@ -205,7 +205,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
                     
                      
 					  <tr>
-                        <td align="center"  style="background-color:#09C; "><div id="inboxShow" align="center"  style="width:100%; background-color:#09C; "><img onClick="page_PrescriptionCapture();" style="padding-top:0px; padding-bottom:0px;" hight="100px" width="100px" src="PrescriptionCapture.png"> </div>
+                        <td align="center"  style="background-color:#09C; "><div id="rx_button" align="center"  style="width:100%; background-color:#09C; "><img onClick="page_PrescriptionCapture();" style="padding-top:0px; padding-bottom:0px;" hight="100px" width="100px" src="PrescriptionCapture.png"> </div>
                         
                         
                         </td>
@@ -216,7 +216,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
                         
                        </td>
                       </tr>
-                      
+                      </div>
                       <!-- <tr>
                         <td align="center">
                         onClick="NearExpiaryCheck();"
@@ -411,7 +411,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
                 
                <div  onClick="chemist_add()" align="center"> <img style="height:70px; width:70px" src="add.png"></div>
                 </br></br>
-                 <!--<div  align="center" onClick="chemist_pending()"> <img style="height:150px; width:150px" src="PendingCustomerApproval.png"></div>-->
+                 <div  align="center" onClick="chemist_pending()"> <img style="height:150px; width:150px" src="PendingCustomerApproval.png"></div>
             </div>
         </nav>
         
@@ -691,7 +691,19 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 			
 			<div id="delivery_date_div">
                 <span style=" color:#009191; ">Delivery Date</span>
-				<input name="delivery_date" id="delivery_date"  value="" type="date" placeholder="Delivery Date">
+                <table width="100%" border="0">
+                  <tr>
+                    <td width="50%"><input name="delivery_date" id="delivery_date"  value="" type="date" placeholder="Delivery Date"></td>
+                    <td width="10%" align="right">Shift:</td>
+                    <td> <select id="OShift" style=" width:100px"data-native-menu="false" >
+                        <option value="Morning" >Morning</option>
+                        <option value="Evening" >Evening</option>
+                        </select>
+                        </td>
+                  </tr>
+                </table>
+
+				
 			</div>
             <div id="collection_date_div">
                 <span style=" color:#009191; ">Collection Date</span>
@@ -721,7 +733,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 					  </tr>
 			  </table>
 			</div>
-
+			<br><br><br>
 
 			<input type="hidden" name="lat" id="lat" >
 			<input type="hidden" name="longitude" id="longitude" >
@@ -732,7 +744,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
              <div id="checkLocation" style="color:#066" hidden=""></div>
             <div align="center"><img id="wait_image_visit_submit" style="" width="50px;" src="loading.gif" alt=""></div>
             <div id="visit_location">
-            <input type="submit" id="loginButton" onClick="getLocationInfo_ready()();"  style="width:100%; height:50px; background-color:#09C; color:#FFF; font-size:20px" value="    Confirm Location     "   />
+            <input type="submit" id="loginButton" onClick="getLocationInfo_ready();"  style="width:100%; height:50px; background-color:#09C; color:#FFF; font-size:20px" value="    Confirm Location     "   />
 			     
             </div>
                          
@@ -1264,6 +1276,8 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 					  </tr>
                       
                       </table>
+                      
+                       <div id="with_whom">
                       <table width="100%" border="0" cellpadding="0" cellspacing="0">
 					  <tr>
 						
@@ -1280,6 +1294,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
                         
 					  </tr>
 			  </table>
+               </div>
               </br></br>
               
               <table width="100%" border="0" cellpadding="0" cellspacing="0">
@@ -1477,9 +1492,15 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
                    </td>
                   </tr>
                   <tr>
-                    <td>Microunio</td>
+                    <td>Microunion</td>
                      <td>:</td>
-                    <td><input type="text" name="dDistrict"  maxlength="50"  id="dDistrict" placeholder="District" style="background-color:#EDFEED" readonly  >
+                    <td>
+                    
+                       <select name="dDistrict" id="dDistrict">
+                                              
+                        </select>                 
+                    
+                   <!-- <input type="text" name="dDistrict"  maxlength="50"  id="dDistrict" placeholder="District" style="background-color:#EDFEED" readonly  >-->
                    </td>
                   </tr>
                   <!--<tr>
@@ -3858,7 +3879,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
                         <td ><img src="camera.png" width="70" height="70" alt="TakePic" onClick="getchAddImage()"></td>
                         <td >
                         <img src="images.png" width="100" height="100" alt="Image" id="myImagechAdd">
-                        <input name="chAddPhoto" id="chAddPhoto" type="hidden" value="" >
+                        <input name="chAddPhoto" id="chAddPhoto" type="text" value="" >
                         </td>
                         
                       </tr>
@@ -3918,9 +3939,9 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
     </br></br></br></br>            
             
             	<div><b></b><span class="market" style="font-size:16px; color:#009191"></span></div>
-            	<div id="error_chemist_add_page" style="color:#C00"></div>	
-                
-                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            	<div id="error_chemist_P_page" style="color:#C00"></div>	
+                <div id="chShow"></div>
+                <!--<table width="100%" border="0" cellspacing="0" cellpadding="0">
                       <tr>
                         
                         <td >
@@ -3965,7 +3986,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
                         
                     </table>
 
-               
+              
                 
                 
                 
@@ -4112,7 +4133,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
                          <td ><input type="submit"  onClick="chemist_submit();"   style="width:100%; height:50px; background-color:#09C; color:#FFF; font-size:20px" value="Reject"   /></td>
                         </tr>
                     </table>
-
+				 -->
                 
 				<br><br><br><br>
        </div>
@@ -5223,4 +5244,4 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
     
 </body>
 
-</html>>>>>>>>
+</html>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
