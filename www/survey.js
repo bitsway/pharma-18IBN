@@ -1524,11 +1524,12 @@ function check_user() {
 	//var  apipath_base_photo_dm='http://127.0.0.1:8000/demo/syncmobile_417_new_ibn/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
 	//var  apipath_base_photo_dm ='http://127.0.0.1:8000/acme/syncmobile_417_new/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
 	
-	var  apipath_base_photo_dm='http://a007.yeapps.com/ipi/syncmobile_417_new_ibn/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
+	//var  apipath_base_photo_dm='http://a007.yeapps.com/acme/syncmobile_417_new/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
 
 
 
   // var apipath_base_photo_dm ='http://e2.businesssolutionapps.com/welcome/dmpath_live_new/get_path?CID='+cid +'&HTTPPASS=e99business321cba'
+  var apipath_base_photo_dm ='http://e2.businesssolutionapps.com/welcome/dmpath_live_new_pharma/get_path?CID='+cid +'&HTTPPASS=e99business321cba'
  
 	
 	var user_id=$("#user_id").val();
@@ -1573,6 +1574,7 @@ function check_user() {
 						var photo_url=resultArray[1];
 						var photo_submit_url=resultArray[2];
 						var report_url=resultArray[3];
+						var tour_url=resultArray[4];
 						
 						
 						//-------------
@@ -1587,12 +1589,14 @@ function check_user() {
 							localStorage.photo_url='';
 							localStorage.photo_submit_url='';
 							
+							
 //							--------------------------
 							
 							localStorage.base_url=base_url;
 							localStorage.photo_url=photo_url;
 							localStorage.photo_submit_url=photo_submit_url;
 							localStorage.report_url=report_url;
+							localStorage.tour_url=tour_url;
 							//alert (localStorage.photo_submit_url)
 							
 							localStorage.cid=cid;
@@ -1951,6 +1955,7 @@ localStorage.report_button_tr='<input type="submit" id="loginButton" onClick="s_
 										//localStorage.doctor_report_button='<a data-role="button" onClick="detail_report_doctor()" >DCR Report</a>'
 										
 	localStorage.prescription_report_button='<input type="submit" id="loginButton" onClick="summary_report_prescription();"  style="width:100%; height:50px; background-color:#09C; color:#FFF; font-size:20px" value="   Prescription Count     "   /></br><input type="submit" id="loginButton" onClick="detail_report_prescription();"  style="width:100%; height:50px; background-color:#09C; color:#FFF; font-size:20px" value="   Prescription Detail     "   />'
+	
 	if (localStorage.rx_show!='YES'){localStorage.prescription_report_button=''}
 	
 	localStorage.report_others_tr	='<input type="submit" id="loginButton" onClick="pay_tr_next ();"  style="width:100%; height:50px; background-color:#09C; color:#FFF; font-size:20px" value="   Pay Slip      "   /></br><input type="submit" id="loginButton" onClick="expense_tr_next();"  style="width:100%; height:50px; background-color:#09C; color:#FFF; font-size:20px" value="   Expense Slip     "   />'
@@ -5894,9 +5899,9 @@ $("#err_marketTour").html('');
 		
 		
 	if (errFlag==0){
-		//alert (localStorage.base_url+'tourDocEntry?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&submitStr='+encodeURI(submitStr));		
+		//alert (localStorage.tour_url+'tourDocEntry?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&submitStr='+encodeURI(submitStr));		
 				
-			   $.ajax(localStorage.base_url+'tourDocEntry?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&submitStr='+encodeURI(submitStr),{
+			   $.ajax(localStorage.tour_url+'tourDocEntry?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&submitStr='+encodeURI(submitStr),{
 		
 										type: 'POST',
 										timeout: 30000,
@@ -11750,13 +11755,13 @@ function chemist_submit() {
 	var imageText="chAddPhoto"
 	var chPhoto=$("#"+imageText).val();
 	var now = $.now();
-	var imageName=localStorage.user_id+'ch_'+now.toString()+'.jpg';	
+	var imageName='ch_'+localStorage.user_id+now.toString()+'.jpg';	
 	//alert (imageName)
 	chemist_name=chemist_name.replace(",","").replace("'","").replace(";","").replace('"','')
 		// ajax-------
 	if ((chemist_name !='') && (chemist_ph !='' )){
 		$("#chSButton").hide();
-		alert (localStorage.base_url+'chemist_submit?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&market_id='+marketId+'&chemist_name='+encodeURI(chemist_name)+'&chemist_add='+encodeURI(chemist_name)+'&chemist_ph='+encodeURI(chemist_ph)+'&trade_license_no='+encodeURI(trade_license_no)+'&vat_registration_no='+encodeURI(vat_registration_no)+'&chemist_dob='+encodeURI(chemist_dob)+'&imageName='+imageName);
+		//alert (localStorage.base_url+'chemist_submit?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&market_id='+marketId+'&chemist_name='+encodeURI(chemist_name)+'&chemist_add='+encodeURI(chemist_name)+'&chemist_ph='+encodeURI(chemist_ph)+'&trade_license_no='+encodeURI(trade_license_no)+'&vat_registration_no='+encodeURI(vat_registration_no)+'&chemist_dob='+encodeURI(chemist_dob)+'&imageName='+imageName);
 		
 		// ajax-------
 				$.ajax({
