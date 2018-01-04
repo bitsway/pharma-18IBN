@@ -1951,7 +1951,7 @@ localStorage.report_button_tr='<input type="submit" id="loginButton" onClick="s_
 										//localStorage.doctor_report_button='<a data-role="button" onClick="detail_report_doctor()" >DCR Report</a>'
 										
 	localStorage.prescription_report_button='<input type="submit" id="loginButton" onClick="summary_report_prescription();"  style="width:100%; height:50px; background-color:#09C; color:#FFF; font-size:20px" value="   Prescription Count     "   /></br><input type="submit" id="loginButton" onClick="detail_report_prescription();"  style="width:100%; height:50px; background-color:#09C; color:#FFF; font-size:20px" value="   Prescription Detail     "   />'
-	
+	if (localStorage.rx_show!='YES'){localStorage.prescription_report_button=''}
 	
 	localStorage.report_others_tr	='<input type="submit" id="loginButton" onClick="pay_tr_next ();"  style="width:100%; height:50px; background-color:#09C; color:#FFF; font-size:20px" value="   Pay Slip      "   /></br><input type="submit" id="loginButton" onClick="expense_tr_next();"  style="width:100%; height:50px; background-color:#09C; color:#FFF; font-size:20px" value="   Expense Slip     "   />'
 										
