@@ -1530,7 +1530,7 @@ function check_user() {
 
   // var apipath_base_photo_dm ='http://e2.businesssolutionapps.com/welcome/dmpath_live_new/get_path?CID='+cid +'&HTTPPASS=e99business321cba'
  var apipath_base_photo_dm ='http://e2.businesssolutionapps.com/welcome/dmpath_live_new_tour/get_path?CID='+cid +'&HTTPPASS=e99business321cba'
- alert ('http://e2.businesssolutionapps.com/welcome/dmpath_live_new_tour/get_path?CID='+cid +'&HTTPPASS=e99business321cba')
+ //alert ('http://e2.businesssolutionapps.com/welcome/dmpath_live_new_tour/get_path?CID='+cid +'&HTTPPASS=e99business321cba')
 	
 	var user_id=$("#user_id").val();
 	var user_pass=$("#user_pass").val();
@@ -1564,19 +1564,20 @@ function check_user() {
 			success:function(data, status,xhr){
 		//$.post(apipath_base_photo_dm,{ },
 //    	function(data, status){
+			
 			if (status=='success'){
 				localStorage.base_url='';
 				
 				var dtaStr=data.replace('<start>','').replace('<end>','')
 				var resultArray = dtaStr.split('<fd>');		
-					if(resultArray.length==4){
+					if(resultArray.length>3){
 						var base_url=resultArray[0];
 						var photo_url=resultArray[1];
 						var photo_submit_url=resultArray[2];
 						var report_url=resultArray[3];
-						alert ('1')
+						
 						var tour_url=resultArray[4];
-						alert ('2')
+						
 						
 						
 						//-------------
