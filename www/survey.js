@@ -10527,6 +10527,7 @@ function page_doctor_profile(getData) {
 													resultList=result_string.split('<rd>')
 													
 													$('#dMicrounion').empty();
+													$('#dDistrict').empty();
 													var optE='<option value="'+dDistrict+'|'+dThana+'">'+dDistrict+'|'+dThana+'</option>'
 													
 													$('#dDistrict').append(optE);
