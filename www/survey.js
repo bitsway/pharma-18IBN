@@ -2302,33 +2302,36 @@ localStorage.report_button_tr='<input type="submit" id="loginButton" onClick="s_
 													
 													
 													if (localStorage.with_whom!=''){
-														var with_whom='<table width="100%" border="0" cellpadding="0" cellspacing="0"> <tr>'
+													var with_whom='<table width="100%" border="0" cellpadding="0" cellspacing="0"> <tr>'
 														
 														with_whomList=localStorage.with_whom.split('<fdfd>');
 														
 														for (j=0; j < with_whomList.length; j++){
-															
-														with_whom=with_whom+'<td ><input type="checkbox" name="v_with_AM" value="'+with_whomList[j]+'" id="v_with_AM" >  <label for="v_with_AM"><font style=" font-size:10px">'+with_whomList[j]+'</font></label></td>'
+														if (j==0){checkName='v_with_AM'}
+														if (j==1){checkName='v_with_RSM'}
+														if (j==2){checkName='v_with_MPO'}
+														with_whom=with_whom+'<td ><input type="checkbox" name="'+checkName+'" value="'+with_whomList[j]+'" id="v_with_AM" >  <label for="'+checkName+'"><font style=" font-size:10px">'+with_whomList[j]+'</font></label></td>'
 															
 														}
 														with_whom=with_whom+' </tr></table>'
 														localStorage.with_whomShow=with_whom
 														
 													}
-													//alert (with_whom)
-													$('#with_whom').empty();
-													$('#with_whom').html(localStorage.with_whomShow);
+												
+												//alert (with_whom)
+												$('#with_whom').empty();
+												$('#with_whom').html(localStorage.with_whomShow);
 													
 													
-													$("#error_login").html('Basic Sync Completed Successfully');
-													$("#error_login").html('Doctor Sync Processing...');
-													doctor_sync()
-													$("#wait_image_login").hide();
-													$("#loginButton").show();
-													$("#error_login").html("Doctor Synced Successfully");
-													$.afui.loadContent("#pageHome",true,true,'right');
+												$("#error_login").html('Basic Sync Completed Successfully');
+												$("#error_login").html('Doctor Sync Processing...');
+												doctor_sync()
+												$("#wait_image_login").hide();
+												$("#loginButton").show();
+												$("#error_login").html("Doctor Synced Successfully");
+												$.afui.loadContent("#pageHome",true,true,'right');
 													
-													set_doc_all();
+												set_doc_all();
 													
 													
 													
@@ -11403,7 +11406,7 @@ function onFail_getDocImage(message) {
 function checkInbox() {	
 			//alert (localStorage.report_url+'checkInbox?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode)
 				
-		  $.ajax(localStorage.report_url+'checkInbox?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode,{
+		  $.ajax(localStorage.report_url+'checkInbox?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&version=11',{
 		
 										type: 'POST',
 										timeout: 30000,
