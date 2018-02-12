@@ -2315,6 +2315,7 @@ localStorage.report_button_tr='<input type="submit" id="loginButton" onClick="s_
 														}
 														with_whom=with_whom+' </tr></table>'
 														localStorage.with_whomShow=with_whom
+														alert (localStorage.with_whomShow)
 														
 													}
 												
