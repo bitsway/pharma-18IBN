@@ -2310,7 +2310,7 @@ localStorage.report_button_tr='<input type="submit" id="loginButton" onClick="s_
 														if (j==0){checkName='v_with_AM'}
 														if (j==1){checkName='v_with_RSM'}
 														if (j==2){checkName='v_with_MPO'}
-														with_whom=with_whom+'<td ><input type="checkbox" name="'+checkName+'" value="'+with_whomList[j]+'" id="v_with_AM" >  <label for="'+checkName+'"><font style=" font-size:10px">'+with_whomList[j]+'</font></label></td>'
+														with_whom=with_whom+'<td ><input type="checkbox" name="'+checkName+'" value="'+with_whomList[j]+'" id="'+checkName+'" >  <label for="'+checkName+'"><font style=" font-size:10px">'+with_whomList[j]+'</font></label></td>'
 															
 														}
 														with_whom=with_whom+' </tr></table>'
