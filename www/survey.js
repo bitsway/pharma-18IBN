@@ -11414,13 +11414,18 @@ function checkInbox() {
 										 	$("#wait_image_docConAdd").hide();
 															},
 										success:function(data, status,xhr){	
-											// alert (data)
-											 if (data==1){
+											var dStr = data.split('<SYNCDATA>')[0];
+											var cStr = data.split('<SYNCDATA>')[1];
+											 if (dStr==1){
 												$("#inboxShow").html('<img onClick="page_inbox();" style="padding-top:0px; padding-bottom:0px;" hight="100px" width="100px" src="inbox_1.png">');
 												
 											 }
 											 else{
 												 $("#inboxShow").html('<img onClick="page_inbox();" style="padding-top:0px; padding-bottom:0px;" hight="100px" width="100px" src="inbox.png">');
+											 }
+											 if (cStr!=''){
+												$("#error_image").html(cStr);
+												
 											 }
 						
 							  }
