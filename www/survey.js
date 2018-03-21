@@ -1559,7 +1559,7 @@ function check_user() {
 			error: function(xhr) {
 			$("#wait_image_login").hide();
 			$("#loginButton").show();
-			$("#error_login").html('Network Timeout. Please check your Internet connection..');
+			$("#error_login").html('Network Timeout. Please check your Internet connection..1');
 													},
 			success:function(data, status,xhr){
 		//$.post(apipath_base_photo_dm,{ },
@@ -1631,7 +1631,7 @@ function check_user() {
 								//alert ('Error: ' + xhr.status + ' ' + xhr.statusText);
 								$("#wait_image_login").hide();
 								$("#loginButton").show();
-								$("#error_login").html('Network Timeout. Please check your Internet connection..');
+								$("#error_login").html('Network Timeout. Please check your Internet connection..2');
 													},
 								success:function(data, status,xhr){	
 									 	var resultArray = data.replace('</START>','').replace('</END>','').split('<SYNCDATA>');	
