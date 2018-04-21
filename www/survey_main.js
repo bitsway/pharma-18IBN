@@ -1521,7 +1521,7 @@ function check_user() {
 	//Main
 
 	
-	var  apipath_base_photo_dm='http://127.0.0.1:8000/demo/syncmobile_417_new_ibn/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
+	//var  apipath_base_photo_dm='http://127.0.0.1:8000/demo/syncmobile_417_new_ibn/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
 	//var  apipath_base_photo_dm ='http://127.0.0.1:8000/acme/syncmobile_417_new/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
 	
 	//var  apipath_base_photo_dm='http://a007.yeapps.com/acme/syncmobile_417_new/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
@@ -1529,7 +1529,7 @@ function check_user() {
 
 
   // var apipath_base_photo_dm ='http://e2.businesssolutionapps.com/welcome/dmpath_live_new/get_path?CID='+cid +'&HTTPPASS=e99business321cba'
-// var apipath_base_photo_dm ='http://e2.businesssolutionapps.com/welcome/dmpath_live_new_tour/get_path?CID='+cid +'&HTTPPASS=e99business321cba'
+ var apipath_base_photo_dm ='http://e2.businesssolutionapps.com/welcome/dmpath_live_new_tour/get_path?CID='+cid +'&HTTPPASS=e99business321cba'
  //alert ('http://e2.businesssolutionapps.com/welcome/dmpath_live_new_tour/get_path?CID='+cid +'&HTTPPASS=e99business321cba')
 	
 	var user_id=$("#user_id").val();
@@ -1547,7 +1547,7 @@ function check_user() {
 	}else{
 		//-----------------
 			
-		alert(apipath_base_photo_dm);
+		//alert(apipath_base_photo_dm);
 		$("#loginButton").hide();
 		$("#doctorButton").hide();
 		$("#wait_image_login").show();
@@ -1569,8 +1569,7 @@ function check_user() {
 				localStorage.base_url='';
 				
 				var dtaStr=data.replace('<start>','').replace('<end>','')
-				var resultArray = dtaStr.split('<fd>');	
-				alert (resultArray.length)	
+				var resultArray = dtaStr.split('<fd>');		
 					if(resultArray.length>3){
 						var base_url=resultArray[0];
 						var photo_url=resultArray[1];
@@ -1621,7 +1620,7 @@ function check_user() {
 							
 							//alert (localStorage.sync_date)
 							
-							alert (localStorage.base_url+'check_user_pharma?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode)
+							//alert (localStorage.base_url+'check_user_pharma?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode)
 							//$("#error_logintext").val(localStorage.base_url+'check_user_pharma?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode);
 	
 							$.ajax(localStorage.base_url+'check_user_pharma?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode,{
@@ -4026,7 +4025,7 @@ function marketNext() {
 							
 							if(mClientID!=''){
 
-									unscheduled_m_client_list+='<li class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-location" style="border-bottom-style:solid; border-color:#CBE4E4;border-bottom-width:thin"><table><tr><td><img onClick="page_chemist_profile(\''+mClientName+'|'+mClientID+'\')" style="height:20px; width:20px" src="editProfile.png">&nbsp;&nbsp;&nbsp;&nbsp;</td><td><a  onClick="marketRetailerNextLV(\''+mClientName+'|'+mClientID+'\')"><font class="name" style="font-size:18; font-weight:600; color:#306161">'+mClientName+'| </font>'+mClientID+'</font></a></td></table></li>';
+									unscheduled_m_client_list+='<li class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-location" style="border-bottom-style:solid; border-color:#CBE4E4;border-bottom-width:thin"><a  onClick="marketRetailerNextLV(\''+mClientName+'|'+mClientID+'\')"><font class="name" style="font-size:18; font-weight:600; color:#306161">'+mClientName+'| </font>'+mClientID+'</font></a></li>';
 							}
 						 }
 					
@@ -4979,9 +4978,9 @@ function lscVisitSubmit(){
 														if (bonus_combo=='YES'){bonus_combo=1;}	else{bonus_combo=0;}
 														var imageName=localStorage.user_id+'_'+now+'.jpg';
 																		//alert (localStorage.productOrderStr);
-																		//$("#errorChkVSubmitTxt").val(localStorage.base_url+'visitSubmit_pharma?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&client_id='+visitClientId+'&visit_type='+visit_type+'&schedule_date='+scheduled_date+'&market_info='+marketInfoStr+'&order_info='+productOrderStr+'&merchandizing='+marchandizingInfoStr+'&campaign='+campaign_str+'&lat='+lat+'&long='+longitude+'&visit_photo='+imageName+'&payment_mode='+localStorage.payment_mode+'&chemist_feedback='+chemist_feedback+'&delivery_date='+delivery_date+'&collection_date='+collection_date+'&location_detail='+localStorage.location_detail+'&bonus_combo='+bonus_combo+'&OShift='+OShift+'&version=p1')
+																		$("#errorChkVSubmitTxt").val(localStorage.base_url+'visitSubmit_pharma?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&client_id='+visitClientId+'&visit_type='+visit_type+'&schedule_date='+scheduled_date+'&market_info='+marketInfoStr+'&order_info='+productOrderStr+'&merchandizing='+marchandizingInfoStr+'&campaign='+campaign_str+'&lat='+lat+'&long='+longitude+'&visit_photo='+imageName+'&payment_mode='+localStorage.payment_mode+'&chemist_feedback='+chemist_feedback+'&delivery_date='+delivery_date+'&collection_date='+collection_date+'&location_detail='+localStorage.location_detail+'&bonus_combo='+bonus_combo+'&OShift='+OShift+'&version=p1')
 																		
-			alert (localStorage.base_url+'visitSubmit_pharma?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&client_id='+visitClientId+'&visit_type='+visit_type+'&schedule_date='+scheduled_date+'&market_info='+marketInfoStr+'&order_info='+productOrderStr+'&merchandizing='+marchandizingInfoStr+'&campaign='+campaign_str+'&lat='+lat+'&long='+longitude+'&visit_photo='+imageName+'&payment_mode='+localStorage.payment_mode+'&chemist_feedback='+chemist_feedback+'&delivery_date='+delivery_date+'&collection_date='+collection_date+'&location_detail='+localStorage.location_detail+'&bonus_combo='+bonus_combo+'&OShift='+OShift+'&version=p1')															
+			//alert (localStorage.base_url+'visitSubmit_pharma?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&client_id='+visitClientId+'&visit_type='+visit_type+'&schedule_date='+scheduled_date+'&market_info='+marketInfoStr+'&order_info='+productOrderStr+'&merchandizing='+marchandizingInfoStr+'&campaign='+campaign_str+'&lat='+lat+'&long='+longitude+'&visit_photo='+imageName+'&payment_mode='+localStorage.payment_mode+'&chemist_feedback='+chemist_feedback+'&delivery_date='+delivery_date+'&collection_date='+collection_date+'&location_detail='+localStorage.location_detail+'&bonus_combo='+bonus_combo+'&OShift='+OShift+'&version=p1')															
 																		// ajax-------
 																		//alert (localStorage.payment_mode);
 														$.ajax(localStorage.base_url+'visitSubmit_pharma?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&client_id='+visitClientId+'&visit_type='+visit_type+'&schedule_date='+scheduled_date+'&market_info='+marketInfoStr+'&order_info='+productOrderStr+'&merchandizing='+marchandizingInfoStr+'&campaign='+campaign_str+'&lat='+lat+'&long='+longitude+'&visit_photo='+imageName+'&payment_mode='+localStorage.payment_mode+'&chemist_feedback='+chemist_feedback+'&delivery_date='+delivery_date+'&collection_date='+collection_date+'&location_detail='+localStorage.location_detail+'&bonus_combo='+bonus_combo+'&OShift='+OShift+'&version=p1',{
@@ -10624,221 +10623,6 @@ function docProfileSubmit() {
 	//$.afui.loadContent("#page_doctor_profile",true,true,'right');
 	
 }
-//==============Chemist Edit===========
-function page_chemist_profile(getData) {
-	localStorage.visit_client=getData
-	$("#myerror_doctor_prof").html('' )
-	$("#wait_image_docProf").show();
-	var market_Id=localStorage.visit_market_show.split('|')[1];
-	var visitDocId=localStorage.visit_client.split('|')[1]	
-	$(".market").html(localStorage.visit_market_show);
-	$(".visit_client").html(localStorage.visit_client);
-	//alert (localStorage.visit_client)
-	//alert (localStorage.report_url+'chemist_info?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&route='+market_Id+'&docId='+visitDocId)
-	//alert (localStorage.report_url+'doc_info?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&route='+market_Id+'&docId='+visitDocId)
-		$.ajax(localStorage.report_url+'chemist_info?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&route='+market_Id+'&docId='+visitDocId,{
-
-								type: 'POST',
-								timeout: 30000,
-								error: function(xhr) {
-								 $("#wait_image_docProf").hide();
-								 $("#myerror_doctor_prof").html('Network Timeout. Please check your Internet connection..');
-													},
-								success:function(data, status,xhr){	
-									 $("#wait_image_docProf").hide();
-									 if (status!='success'){
-										$("#myerror_doctor_prof").html('Network Timeout. Please check your Internet connection...');
-										
-									 }
-									 else{	
-									 	var resultArray = data.replace('</START>','').replace('</END>','').split('<SYNCDATA>');	
-										
-											if (resultArray[0]=='FAILED'){
-														$("#myerror_doctor_prof").text(resultArray[1]);	
-														
-													}
-											else if (resultArray[0]=='SUCCESS'){	
-												
-												var result_string=resultArray[1];
-												
-												var ChemistName=result_string.split('<fdfd>')[0]
-											
-												var Address_Line_1=result_string.split('<fdfd>')[1]
-												var district=result_string.split('<fdfd>')[2]
-												var thana=result_string.split('<fdfd>')[3]
-												var RegistrationNo=result_string.split('<fdfd>')[4]
-												var NID=result_string.split('<fdfd>')[5]
-												var Contact_Name=result_string.split('<fdfd>')[6]
-												var Contact_phone=result_string.split('<fdfd>')[7]
-												var Category=result_string.split('<fdfd>')[8]
-												var SubCategory=result_string.split('<fdfd>')[9]
-												var DOB=result_string.split('<fdfd>')[10]
-												var Cash_Credit=result_string.split('<fdfd>')[11]
-												var Credit_Limit=result_string.split('<fdfd>')[12]
-												var Status=result_string.split('<fdfd>')[13]
-												var catStr=result_string.split('<fdfd>')[14]
-												var subcatStr=result_string.split('<fdfd>')[15]
-												var client_id=result_string.split('<fdfd>')[16]
-												//alert (client_id)
-												$("#dCId").val(client_id)
-												$("#dCName").val(ChemistName)
-												$("#dCAddress").val(Address_Line_1)
-												$("#dCDist").val(district)
-												$("#dCThana").val(thana)
-												$("#dCRegNo").val(RegistrationNo)
-												$("#dCNid").val(NID)
-												$("#dCContactName").val(Contact_Name)
-												$("#dCPhone").val(Contact_phone)
-												$("#dCCategory").val(Category)
-												$("#dSubCategory").val(SubCategory)
-												$("#dCDOB").val(DOB)
-												$("#dCCash_Credit").val(Cash_Credit)
-												
-												$("#dCCreditLimit").val(Credit_Limit)
-												$("#dCStatus").val(Status)
-												
-												//setCombo===================
-												catList=catStr.split(',')
-												$('#dCCategory').empty();
-												
-												for (var j=0; j < catList.length-1; j++){
-													var cat_id=catList[j].split('|')[1]
-													if (cat_id==Category){
-														var opt='<option selected value="'+catList[j]+'">'+catList[j]+'</option>'
-													}
-													else{
-														var opt='<option value="'+catList[j]+'">'+catList[j]+'</option>'
-													}
-													
-													 $('#dCCategory').append(opt);
-													
-												}
-												subcatList=subcatStr.split(',')
-												$('#dSubCategory').empty();
-												
-												for (var j=0; j < subcatList.length-1; j++){
-													var subcat_id=subcatList[j].split('|')[1]
-													if (subcat_id==SubCategory){
-														var opt='<option selected value="'+subcatList[j]+'">'+subcatList[j]+'</option>'
-													}
-													else{
-														var opt='<option value="'+subcatList[j]+'">'+subcatList[j]+'</option>'
-													}
-													
-													 $('#dSubCategory').append(opt);
-													
-												}
-												
-												
-												$('#dCCash_Credit').empty();
-										if (Cash_Credit==''){
-											$('#dCCash_Credit').append('<option selected value="NeedToSet">NeedToSet</option>')
-											$('#dCCash_Credit').append('<option selected value="Cash">Cash</option>')
-											$('#dCCash_Credit').append('<option selected value="Credit">Credit</option>')
-										}
-										else{
-										$('#dCCash_Credit').append('<option value="'+Cash_Credit+'">'+Cash_Credit+'</option>')
-										$('#dCCash_Credit').append('<option selected value="Cash">Cash</option>')
-										$('#dCCash_Credit').append('<option selected value="Credit">Credit</option>')
-										$('#dCCash_Credit').append('<option selected value="NeedToSet">NeedToSet</option>')
-										}
-													
-													
-									$('#dCStatus').empty();
-									if (Status==''){
-									
-									$('#dCStatus').append('<option  value="ACTIVE">ACTIVE</option>')
-									$('#dCStatus').append('<option  value="INACTIVE">INACTIVE</option>')
-									}
-									else{
-									$('#dCStatus').append('<option selected value="'+Status+'">'+Status+'</option>')
-									$('#dCStatus').append('<option  value="ACTIVE">ACTIVE</option>')
-									$('#dCStatus').append('<option  value="INACTIVE">INACTIVE</option>')
-										}	
-													
-												
-												//====================setCombo end
-												
-												
-											}
-									   }
-									   }
-							 });//end ajax
-							
-//							 
-//							
-								
-
-
-	$("#myerror_chemist_prof").html('' )
-	$("#wait_image_chemProf").hide();
-	$.afui.loadContent("#page_chemist_profile",true,true,'right');
-	
-}
-
-function chemistProfileSubmit() {
-	$("#myerror_chemist_prof").html('' )
-	$("#wait_image_chemProf").show();
-	var market_Id=localStorage.visit_market_show.split('|')[1];
-	var visitDocId=localStorage.visit_client.split('|')[1]	
-	
-	var client_id=$("#dCId").val()
-	var ChemistName=$("#dCName").val()
-	var Address_Line_1=$("#dCAddress").val()
-	var district=$("#dCDist").val()
-	var thana=$("#dCThana").val()
-	var RegistrationNo=$("#dCRegNo").val()
-	var NID=$("#dCNid").val()
-	var Contact_Name=$("#dCContactName").val()
-	var Contact_phone=$("#dCPhone").val()
-	var Category=$("#dCCategory").val()
-	var SubCategory=$("#dSubCategory").val()
-	var DOB=$("#dCDOB").val()
-	var Cash_Credit=$("#dCCash_Credit").val()
-	
-	var Credit_Limit=$("#dCCreditLimit").val()
-	var Status=$("#dCStatus").val()
-	
-	
-
-	
-	//alert (localStorage.report_url+'chemist_info_submit?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&route='+market_Id+'&client_id='+client_id+'&ChemistName='+ChemistName+'&Address_Line_1='+Address_Line_1+'&district='+district+'&thana='+thana+'&RegistrationNo='+RegistrationNo+'&NID='+NID+'&Contact_Name='+Contact_Name+'&Contact_phone='+Contact_phone+'&Category='+Category+'&SubCategory='+SubCategory+'&DOB='+DOB+'&Cash_Credit='+Cash_Credit+'&Credit_Limit='+Credit_Limit+'&Status='+Status)
-		$.ajax(localStorage.report_url+'chemist_info_submit?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&route='+market_Id+'&client_id='+client_id+'&ChemistName='+ChemistName+'&Address_Line_1='+Address_Line_1+'&district='+district+'&thana='+thana+'&RegistrationNo='+RegistrationNo+'&NID='+NID+'&Contact_Name='+Contact_Name+'&Contact_phone='+Contact_phone+'&Category='+Category+'&SubCategory='+SubCategory+'&DOB='+DOB+'&Cash_Credit='+Cash_Credit+'&Credit_Limit='+Credit_Limit+'&Status='+Status,{
-
-								type: 'POST',
-								timeout: 30000,
-								error: function(xhr) {
-								 $("#wait_image_chemProf").hide();
-								 $("#myerror_chemist_prof").html('Network Timeout. Please check your Internet connection..');
-													},
-								success:function(data, status,xhr){	
-									 $("#wait_image_chemProf").hide();
-									 if (status!='success'){
-										$("#myerror_chemist_prof").html('Network Timeout. Please check your Internet connection...');
-										
-									 }
-									 else{	
-									 	var resultArray = data.replace('</START>','').replace('</END>','').split('<SYNCDATA>');	
-										
-								if (resultArray[0]=='FAILED'){
-											$("#myerror_chemist_prof").text(resultArray[1]);	
-											
-										}
-								else if (resultArray[0]=='SUCCESS'){	
-									var result_string=resultArray[1];
-									
-									$("#myerror_chemist_prof").html(result_string)
-									
-								
-							}else{	
-								 $("#wait_image_chemProf").hide();
-								 $("#myerror_chemist_prof").html('Network Timeout. Please check your Internet connection..');
-								}
-						}
-					  }
-			 });//end ajax
-}
-//=====================================
 function clearSearchRouteDoctor(){
 	$("#tour_market_combo_id").val("")
 	$("#tour_market_combo_id").focus()

@@ -1440,26 +1440,13 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 				<br>
                 
      			<table width="100%" border="0">
-                
-                  
-                  
-                  <tr>
-                    <td>Category  <span style="color:#F00">*</span></td>
-                     <td>:</td>
-                    <td><!--<input type="text" name="dCaegory"   id="dCaegory" placeholder="Category"  >-->
-                     
-                        <select name="dCategory" id="dCategory">
-                          
-                        </select>
-                  </td>
-                  </tr>
                   <tr>
                     <td>Name</td>
                     <td>:</td>
-                    <td><input type="text" name="dName"   id="dName" placeholder="Name"  > </td>
+                    <td><input type="text" name="dName"   id="dName" placeholder="Name"  ></td>
                   </tr>
                   <tr>
-                    <td>Specialty </td>
+                    <td>Specialty</td>
                      <td>:</td>
                     <td><!--<input type="text" name="dSpaciality"    id="dSpaciality" placeholder="Specialty"  >-->
                     <select name="dSpaciality" id="dSpaciality">
@@ -1468,74 +1455,20 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
                     </td>
                   </tr>
                   <tr>
-                    <td>Microunion</td>
-                     <td>:</td>
-                    <td>
-                    
-                       <select name="dDistrict" id="dDistrict">
-                                              
-                        </select>                 
-                    
-                   <!-- <input type="text" name="dDistrict"  maxlength="50"  id="dDistrict" placeholder="District" style="background-color:#EDFEED" readonly  >-->
-                   </td>
-                  </tr>
-                  <tr>
                     <td>Degree</td>
                      <td>:</td>
                     <td><input type="text" name="dDegree"   id="dDegree" placeholder="Degree"  ></td>
                   </tr>
-                  
-                 
                   <tr>
-                    <td>Attached Institute</td>
+                    <td>Category</td>
                      <td>:</td>
-                    <td><input type="text" name="dAttachedInstitute"   id="dAttachedInstitute" placeholder="Attached Institute"  >
-                    <br><br></td>
-                  </tr>
-                  <tr>
-                    <td>Service/KOL/DSR <span style="color:#F00">*</span></td>
-                     <td>:</td>
-                    <td><select name="dS_K_D" id="dS_K_D">
-                    	<option value="SERVICE">SERVICE</option>
-                        <option value="KOL">KOL</option>
-                        <option value="DSR">DSR</option>
-                                              
+                    <td><!--<input type="text" name="dCaegory"   id="dCaegory" placeholder="Category"  >-->
+                     
+                        <select name="dCategory" id="dCategory">
+                          
                         </select>
-                    <br></td>
+                  </td>
                   </tr>
-                  <tr>
-                    <td>Service ID</td>
-                     <td>:</td>
-                    <td><select name="dService" id="dService">
-                    	<option value="1">Service ID 1</option>
-                        <option value="2">Service ID 2</option>
-                        <option value="3">Service ID 3</option>                 
-                        </select>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Third party ID</td>
-                     <td>:</td>
-                    <td><select name="dParty" id="dParty">
-                    	<option value="1">Party ID 1</option>
-                        <option value="2">Party ID 2</option>
-                        <option value="3">Party ID 3</option>                 
-                        </select>
-                        <br><br>
-                    </td>
-                  </tr>
-                  
-                  
-                  
-                  
-
-
-
-
-
-
-
-
                   <tr>
                     <td>DOB</td>
                      <td>:</td>
@@ -1549,8 +1482,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
                   <tr>
                     <td>Mobile</td>
                      <td>:</td>
-                    <td><input type="text" name="dMobile"  maxlength="50"  id="dMobile" placeholder="Mobile"  >
-                    <br><br></td>
+                    <td><input type="text" name="dMobile"  maxlength="50"  id="dMobile" placeholder="Mobile"  ></td>
                   </tr>
                   <tr>
                <tr>
@@ -1559,23 +1491,17 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
                     <td><textarea name="dCAddress" id="dCAddress"  rows="3" placeholder="Chamber Address"></textarea>
                    </td>
                   </tr>
-                  <td>Other Chamber</td>
+                  <tr>
+                    <td>Microunion</td>
                      <td>:</td>
-                    <td><textarea name="dOtherChamber" id="dOtherChamber"  rows="3" placeholder="Other Chamber"></textarea>
+                    <td>
+                    
+                       <select name="dDistrict" id="dDistrict">
+                                              
+                        </select>                 
+                    
+                   <!-- <input type="text" name="dDistrict"  maxlength="50"  id="dDistrict" placeholder="District" style="background-color:#EDFEED" readonly  >-->
                    </td>
-                  </tr>
-                  
-					 <tr>
-                    <td>Pharma Route</td>
-                     <td>:</td>
-                    <td><input type="text" name="dPharmaRoute"    id="dPharmaRoute" placeholder="Pharma Route" readonly style="background-color:#CCC" >
-                    </td>
-                  </tr>
-                   <tr>
-                    <td>NMD Route</td>
-                     <td>:</td>
-                    <td><input type="text" name="dNMDRoute"   id="dNMDRoute" placeholder="NMD Route" readonly style="background-color:#CCC" >
-                    </td>
                   </tr>
                   <!--<tr>
                     <td>Thana</td>
@@ -1651,9 +1577,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
   </tr>
 </table>
 </footer>
-    </div>   
-    
-       
+    </div>      
  <!--=========================Add Micro===================================-->
 
  <div class="view" id="page_micro_addView">
@@ -5305,210 +5229,9 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 
 
 
-<!--=============Chemist Profile=================================-->
 
-<div class="view" id="page_chemist_profileView">
-        <div class="pages">
-         <header> 
-          <table width="100%" border="0">
-          <tr>
-            <td width="10%" align="left"></td>
-            <td align="center" style="font-size:18px; font-weight:normal; color:#F8F8F8">Chemist Profile</td>
-            <td width="10%"  ></td> 
-          </tr>
-        </table>
-</header> 
-            <div class="panel" id="page_chemist_profile" style="background-color:#EDFEED">
-            </br></br></br></br>
-                <!--<div class="card">-->
-                    <!--<h1>Sync</h1>-->
-                     
-			
-            <input type="hidden" name="doctor_prof"    id="doctor_prof" placeholder="Name"  >
-            
-				<ul data-inset="true"  data-role="listview" style="background-color:#EDFEED">
-					<li>
-								
-						<div><b>Market :</b><span class="market" style="font-size:16px;color:#009191"></span></div>
-                     
-                        <div><b>Doctor :</b><span class="visit_client"  style="font-size:16px; color:#00A3F0" style="font-weight:bold"></span></div>                        
-					</li>					
-				</ul>
-				<br>
-                
-     			<table width="100%" border="0">
-                  <tr>
-                    <td>ChemistName <span style="color:#F00">*</span></td>
-                    <td>:</td>
-                    <td>
-                    <input type="text" name="dCId"   id="dCId" placeholder="Name"  >
-                    <input type="text" name="dCName"   id="dCName" placeholder="Name"  ></td>
-                  </tr>
-                  <tr>
-                    <td>Address Line 1 <span style="color:#F00">*</span></td>
-                    <td>:</td>
-                    <td><textarea name="dCAddress" id="dCAddress"  rows="3" placeholder="Address"></textarea>
-                    </td>
-                  </tr>
-                  <tr> 
-                  <td>Dist <span style="color:#F00">*</span></td>
-                    <td>:</td>
-                    <td><input type="text" name="dCDist"   id="dCDist" placeholder="Dist"  ></td>
-                  </tr>
-                  <tr>
-                    <td>Thana <span style="color:#F00">*</span> </td>
-                    <td>:</td>
-                    <td><input type="text" name="dCThana"   id="dCThana" placeholder="Thana"  ></td>
-                  </tr>
-                  <tr>
-                    <td>RegistrationNo </td>
-                    <td>:</td>
-                    <td><input type="text" name="dCRegNo"   id="dCRegNo" placeholder="RegistrationNo"  ></td>
-                  </tr>
-                  <tr>
-                    <td>NID </td>
-                     <td>:</td>
-                    <td><input type="text" name="dCNid"   id="dCNid" placeholder="NID"  ></td>
-                  </tr>
-                  <tr>
-                    <td> Contact Name <span style="color:#F00">*</span> </td>
-                     <td>:</td>
-                    <td><input type="text" name="dCContactName"   id="dCContactName" placeholder="Contact Name"  ></td>
-                  </tr>
-                  <tr>
-                    <td>Contact/phone <span style="color:#F00">*</span> </td>
-                     <td>:</td>
-                    <td><input type="number" name="dCPhone"   id="dCPhone" placeholder="Contact/phone"  >
-                  </td>
-                  </tr>
-                  <tr>
-                    <td>Category <span style="color:#F00">*</span></td>
-                     <td>:</td>
-                    <td><select name="dCCategory" id="dCCategory" >
-                                              
-                        </select>
-                    </td>
-                  </tr>
-                   <tr>
-                    <td>SubCategory <span style="color:#F00">*</span></td>
-                     <td>:</td>
-                    <td><select name="dSubCategory" id="dSubCategory">
-                                              
-                        </select>
-                   </td>
-                  </tr>
-                  <tr>
-                    <td>DOB </td>
-                     <td>:</td>
-                    <td><input type="date" name="dCDOB"  maxlength="50"  id="dCDOB" placeholder="DOB"  ></td>
-                  </tr>
-                  <tr>
-                  <tr>
-                    <td>Credit Limit <span style="color:#F00">*</span></td>
-                     <td>:</td>
-                    <td>
-                    	<input type="number" name="dCCreditLimit"  maxlength="50"  id="dCCreditLimit" placeholder="Credit Limit"  >
-                                     
-                    
-                 
-                   </td>
-                  </tr>
-               <tr>
-                    <td>Cash/Credit <span style="color:#F00">*</span> </td>
-                     <td>:</td>
-                    <td>
-                    
-                    <select name="dCCash_Credit" id="dCCash_Credit">
-                    </select>
-                                              
-                        
-                   </td>
-                  </tr>
-                   
-                  <tr>
-                    <td>Status</td>
-                     <td>:</td>
-                    <td>
-                    
-                       <select name="dCStatus" id="dCStatus">
-                                              
-                        </select>                 
-                    
-                 
-                   </td>
-                  </tr>
-               
 
- 
-                </table>
-               
-				<br>
-                <br>
-                <img id="wait_image_chemProf" style="width:50px" src="loading.gif" alt="">	
-			    <div id="myerror_chemist_prof" style="color:#C00"></div>
-				 <input type="submit" id="btn_submit_doc_profile" onClick="chemistProfileSubmit();"   style="width:100%; height:50px; background-color:#09C; color:#FFF; font-size:20px" value="     Submit      "   />
-                
-			  
-			
-            <br>                        
-            <br>
-             
-            <br>            
-			<br>
-            <br>                        
-       
-           <!-- <div style="background-color:#F4D3BD">
-                       <br/>
-                    <br/>
-                      <table width="100%" border="0">
-                      <tr>
-                            <td style="font-size:20px; color:#974B00">Remove Request<br><br></td>
-                          </tr>
-                          <tr>
-                            <td style="font-size:16px; color:#974B00">Cause for Remove Request:</td>
-                          </tr>
-                          <tr>
-                            <td><select id="docC_combo" style="width:250px; background-color:#FFF8F0; color:#974B00" data-native-menu="false"  >
-                            <option value=""  selected>Select</option>
-                            <option value="Transferred" >Transferred </option>
-                            <option value="Deceased" >Deceased</option>
-                            <option value="PermanentlyClosed " >PermanentlyClosed </option>
-                            </select>
-                          </td>
-                          </tr>
-                          <tr>
-                            <td> <input type="submit" id="btn_docVCancell" onClick="cancellDoc();"   style="width:100%; height:50px; background-color:#B75B00; color:#FFF; font-size:20px" value="     Confirm      "   /></td>
-                          </tr>
-                        </table>
-						 <br/><br/> <br/><br/>
-                      
-                      </div> -->
-            <br>            
-			<br>
-            <br>                        
-            <br>
-            <br>            
-			<br>
-            
-                   
-               <!-- </div>-->
-               </div>
-            </div>
-       
-        <footer>
-		
-         
-		             <table width="100%" border="0">
-  <tr>
-    <td align="left" width="50%"> <a onClick="page_market_ret()" class="icon left" ></a></td>
-    <td align="right"><a onClick="#"  ></a></a>
-		
-      			 
-         </td>
-  </tr>
-</table>
-</footer>
-    </div>
+
 
 
 
@@ -5529,4 +5252,4 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
     
 </body>
 
-</html>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+</html>>>>
