@@ -1547,7 +1547,7 @@ function check_user() {
 	}else{
 		//-----------------
 			
-		alert(apipath_base_photo_dm);
+		//alert(apipath_base_photo_dm);
 		$("#loginButton").hide();
 		$("#doctorButton").hide();
 		$("#wait_image_login").show();
@@ -1570,7 +1570,7 @@ function check_user() {
 				
 				var dtaStr=data.replace('<start>','').replace('<end>','')
 				var resultArray = dtaStr.split('<fd>');	
-				alert (resultArray.length)	
+				//alert (resultArray.length)	
 					if(resultArray.length>3){
 						var base_url=resultArray[0];
 						var photo_url=resultArray[1];
@@ -1621,7 +1621,7 @@ function check_user() {
 							
 							//alert (localStorage.sync_date)
 							
-							alert (localStorage.base_url+'check_user_pharma?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode)
+							//alert (localStorage.base_url+'check_user_pharma?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode)
 							//$("#error_logintext").val(localStorage.base_url+'check_user_pharma?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode);
 	
 							$.ajax(localStorage.base_url+'check_user_pharma?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode,{
