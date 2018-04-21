@@ -1487,7 +1487,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
                   
                  
                   <tr>
-                    <td>Attached Institute</td>
+                    <td style="font-size:11px">Attached Institute</td>
                      <td>:</td>
                     <td><input type="text" name="dAttachedInstitute"   id="dAttachedInstitute" placeholder="Attached Institute"  >
                     <br><br></td>
@@ -1495,10 +1495,12 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
                   <tr>
                     <td>Service/KOL/DSR <span style="color:#F00">*</span></td>
                      <td>:</td>
-                    <td><select name="dS_K_D" id="dS_K_D">
-                    	<option value="SERVICE">SERVICE</option>
-                        <option value="KOL">KOL</option>
-                        <option value="DSR">DSR</option>
+                    <td>
+                    
+                    <select name="dS_K_D" id="dS_K_D">
+                    	<option value="YES">YES</option>
+                        <option value="NO">NO</option>
+                        
                                               
                         </select>
                     <br></td>
@@ -1506,21 +1508,17 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
                   <tr>
                     <td>Service ID</td>
                      <td>:</td>
-                    <td><select name="dService" id="dService">
-                    	<option value="1">Service ID 1</option>
-                        <option value="2">Service ID 2</option>
-                        <option value="3">Service ID 3</option>                 
-                        </select>
+                    <td>
+                    <input type="text" name="dService"   id="dService" placeholder="Service ID"  >
+                  
                     </td>
                   </tr>
                   <tr>
                     <td>Third party ID</td>
                      <td>:</td>
-                    <td><select name="dParty" id="dParty">
-                    	<option value="1">Party ID 1</option>
-                        <option value="2">Party ID 2</option>
-                        <option value="3">Party ID 3</option>                 
-                        </select>
+                    <td>
+                    <input type="text" name="dParty"   id="dParty" placeholder="Third party ID"  >
+
                         <br><br>
                     </td>
                   </tr>
@@ -5345,7 +5343,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
                     <input type="text" name="dCName"   id="dCName" placeholder="Name"  ></td>
                   </tr>
                   <tr>
-                    <td style="font-size:10px">AddressLine1 <span style="color:#F00">*</span></td>
+                    <td style="font-size:11px">AddressLine1 <span style="color:#F00">*</span></td>
                     <td>:</td>
                     <td><textarea name="dCAddress" id="dCAddress"  rows="3" placeholder="Address"></textarea>
                     </td>
@@ -5529,4 +5527,4 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
     
 </body>
 
-</html>>>>
+</html>>>>>>
