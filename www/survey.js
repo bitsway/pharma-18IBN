@@ -1629,7 +1629,7 @@ function check_user() {
 								type: 'POST',
 								timeout: 30000,
 								error: function(xhr) {
-								alert ('Error: ' + xhr.status + ' ' + xhr.statusText);
+								//alert ('Error: ' + xhr.status + ' ' + xhr.statusText);
 								$("#wait_image_login").hide();
 								$("#loginButton").show();
 								$("#error_login").html('Network Timeout. Please check your Internet connection..2');
