@@ -1522,7 +1522,7 @@ function check_user() {
 
 	
 	//var  apipath_base_photo_dm='http://127.0.0.1:8000/demo/syncmobile_417_new_ibn/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
-	//var  apipath_base_photo_dm ='http://127.0.0.1:8000/acme/syncmobile_417_new/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
+	//var  apipath_base_photo_dm ='http://w02.yeapps.com/ipi/syncmobile_417_new_ibn/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
 	
 	//var  apipath_base_photo_dm='http://a007.yeapps.com/acme/syncmobile_417_new/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
 
@@ -1629,7 +1629,7 @@ function check_user() {
 								type: 'POST',
 								timeout: 30000,
 								error: function(xhr) {
-								//alert ('Error: ' + xhr.status + ' ' + xhr.statusText);
+								alert ('Error: ' + xhr.status + ' ' + xhr.statusText);
 								$("#wait_image_login").hide();
 								$("#loginButton").show();
 								$("#error_login").html('Network Timeout. Please check your Internet connection..2');
