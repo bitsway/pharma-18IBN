@@ -115,9 +115,8 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
                    </br></br></br>
                    <!--<input type="submit" id="doctorButton" onClick="doctor_sync();"  style="width:100%; height:50px; background-color:#09C; color:#FFF; font-size:20px" value="    Doctor & Generic Sync     "   />-->
                     <div align="center"><img id="wait_image_login" style="" width="50px;" src="loading.gif" alt=""></div>
-                    
-                    <a href="#" onclick="window.open('https://www.google.com/', '_system');">test</a>
-                    
+                   
+                    <!--<a href="#" onclick="window.open('https://www.google.com/', '_system');">test</a>-->
                <!-- </div>-->
             </div>
         </div>
@@ -208,6 +207,21 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
                      
 					  <tr>
                         <td align="center"  style="background-color:#09C; "><div id="rx_button" align="center"  style="width:100%; background-color:#09C; "><img onClick="page_PrescriptionCapture();" style="padding-top:0px; padding-bottom:0px;" hight="100px" width="100px" src="PrescriptionCapture.png"> </div>
+                        
+                        
+                        </td>
+                        <td>
+                       
+                       <div align="center"  style="width:100%; background-color:#09C; ">
+                        <!--<img    hight="100px" width="100px"  src="BusinessVolume_1.png">--></div>
+                        
+                       </td>
+                      </tr>
+                      </div>
+                      
+                      
+                      <tr>
+                        <td align="center"  style="background-color:#09C; " ><div id="link_button"   align="center"  style="width:100%; background-color:#09C; height:100px; color:#FFF; font-size:14px " ><img onClick="page_Link();" style="padding-top:0px; padding-bottom:0px;" hight="100px" width="100px" src="others_image.png"></div>
                         
                         
                         </td>
@@ -3948,7 +3962,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
     </br></br></br></br>            
             
             	<div><b></b><span class="market" style="font-size:16px; color:#009191"></span></div>
-            	<div id="error_chemist_add_page" style="color:#C00"></div>	
+            	
                 
                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
                       <tr>
@@ -3962,38 +3976,126 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
                     </table>
                     </br>
                 <table width="100%" border="0">
-                      <tr>
-                      <td >Name <font style="color:#903; font-size:16px"> * </font></td>
-                       <td width="70%"><input type="text" name="chemist_name" id="chemist_name"  value="" placeholder="Name"></td>
-                        </tr>
-                        <tr>
-                        <td >Address</td>
-                         <td><input type="text" name="chemist_add" id="chemist_add"  value="" placeholder="Adreass"></td>
-                        </tr>
-                        <tr>
-                        <td >Phone <font style="color:#903; font-size:16px"> * </font></td>
-                         <td ><input type="number" name="chemist_ph" id="chemist_ph"  value="" placeholder="Phone"></td>
-                        </tr>
-                         <tr>
-                        <td >Trade License</td>
-                         <td ><input type="text" name="trade_license_no" id="trade_license_no"  value="" placeholder="Trade License"></td>
-                        </tr>
-                         <tr>
-                        <td >Vat Registration</td>
-                         <td ><input type="text" name="vat_registration_no" id="vat_registration_no"  value="" placeholder="Vat Registration"></td>
-                        </tr>
-                         <tr>
-                        <td >Date of birth</td>
-                         <td ><input type="date" name="chemist_dob" id="chemist_dob"  value="" placeholder="Date of birth"></td>
-                        </tr>
+                  <tr>
+                    <td>ChemistName <span style="color:#F00">*</span></td>
+                    <td>:</td>
+                    <td>
+                    <input type="text" name="addCName"   id="addCName" placeholder="Name"  ></td>
+                  </tr>
+                  <tr>
+                    <td>Address Line 1 <span style="color:#F00">*</span></td>
+                    <td>:</td>
+                    <td><textarea name="addCAddress" id="addCAddress"  rows="3" placeholder="Address"></textarea>
+                    </td>
+                  </tr>
+                  <tr> 
+                  <td>Dist </td>
+                    <td>:</td>
+                    <td><input type="text" name="addCDist"   id="addCDist" placeholder="Dist" readonly  style="background-color:#CCC"></td>
+                  </tr>
+                  <tr>
+                    <td>Thana </td>
+                    <td>:</td>
+                    <td><input type="text" name="addCThana"   id="addCThana" placeholder="Thana"  readonly style="background-color:#CCC"></td>
+                  </tr>
+                  <tr>
+                    <td>RegistrationNo </td>
+                    <td>:</td>
+                    <td><input type="text" name="addCRegNo"   id="addCRegNo" placeholder="RegistrationNo"  ></td>
+                  </tr>
+                  <tr>
+                    <td>NID </td>
+                     <td>:</td>
+                    <td><input type="text" name="addCNid"   id="addCNid" placeholder="NID"  ></td>
+                  </tr>
+                  <tr>
+                    <td> Contact Name <span style="color:#F00">*</span> </td>
+                     <td>:</td>
+                    <td><input type="text" name="addCContactName"   id="addCContactName" placeholder="Contact Name"  ></td>
+                  </tr>
+                  <tr>
+                    <td>Contact/phone <span style="color:#F00">*</span> </td>
+                     <td>:</td>
+                    <td><input type="number" name="addCPhone"   id="addCPhone" placeholder="Contact/phone"  >
+                  </td>
+                  </tr>
+                  <tr>
+                    <td>Category <span style="color:#F00">*</span></td>
+                     <td>:</td>
+                    <td><select name="addCCategory" id="addCCategory" >
+                                              
+                        </select>
+                    </td>
+                  </tr>
+                   <tr>
+                    <td>SubCategory <span style="color:#F00">*</span></td>
+                     <td>:</td>
+                    <td><select name="addSubCategory" id="addSubCategory">
+                                              
+                        </select>
+                   </td>
+                  </tr>
+                  <tr>
+                    <td>DOB </td>
+                     <td>:</td>
+                    <td><input type="date" name="addCDOB"  maxlength="50"  id="addCDOB" placeholder="DOB"  ></td>
+                  </tr>
+                  <tr>
+                  <tr>
+                    <td>Credit Limit <span style="color:#F00">*</span></td>
+                     <td>:</td>
+                    <td>
+                    	<input type="number" name="addCCreditLimit"  maxlength="50"  id="addCCreditLimit" placeholder="Credit Limit"  >
+                                     
+                    
+                 
+                   </td>
+                  </tr>
+               <tr>
+                    <td>Cash/Credit <span style="color:#F00">*</span> </td>
+                     <td>:</td>
+                    <td>
+                    
+                    <select name="addCCash_Credit" id="addCCash_Credit">
+                    <option value="Cash">Cash</option>
+                    <option value="Credit">Credit</option
+                    ></select>
+                                              
                         
-                        
-                    </table>
-	
+                   </td>
+                  </tr>
+                   
+                 
+               
+				<tr>
+                    <td>NumberofDoc</td>
+                     <td>:</td>
+                    <td>
+                     <input type="number" name="addCNumberofDoc"  maxlength="50"  id="addCNumberofDoc" placeholder="AvgPatientPerDay"  >
+                                     
+                    
+                 
+                   </td>
+                  </tr>
+                  <tr>
+                    <td>AvgPatientPerDay</td>
+                     <td>:</td>
+                    <td>
+                     <input type="number" name="addCAvgPatientPerDay"  maxlength="50"  id="addCAvgPatientPerDay" placeholder="AvgPatientPerDay"  >
+                                 
+                    <input type="hidden" name="addCStatus"  maxlength="50"  id="addCStatus" value="SUBMITTED" >
+                 
+                   </td>
+                  </tr>
+ 
+                </table>
+                
+				<img id="wait_image_chemAdd" style="width:50px" src="loading.gif" alt="">		
+                <div id="error_chemist_add_page" style="color:#C00"></div>	
                 <input type="submit" id="chSButton" name="chSButton"  onClick="chemist_submit();"   style="width:100%; height:50px; background-color:#09C; color:#FFF; font-size:20px" value="Submit"   />
                 	
-				
-				
+				<br><br><br>
+				 
        </div>
     </div>
 
@@ -5338,27 +5440,27 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
                 
      			<table width="100%" border="0">
                   <tr>
-                    <td>Name <span style="color:#F00">*</span></td>
+                    <td>ChemistName <span style="color:#F00">*</span></td>
                     <td>:</td>
                     <td>
                     <input type="hidden" name="dCId"   id="dCId" placeholder="Name"  >
                     <input type="text" name="dCName"   id="dCName" placeholder="Name"  ></td>
                   </tr>
                   <tr>
-                    <td style="font-size:11px">AddressLine1 <span style="color:#F00">*</span></td>
+                    <td>Address Line 1 <span style="color:#F00">*</span></td>
                     <td>:</td>
-                    <td><textarea name="dCAddress" id="dCAddress"  rows="3" placeholder="Address"></textarea>
+                    <td><textarea name="AddressLine" id="AddressLine"  rows="3" placeholder="Address"></textarea>
                     </td>
                   </tr>
                   <tr> 
-                  <td>Dist <span style="color:#F00">*</span></td>
+                  <td>Dist </td>
                     <td>:</td>
-                    <td><input type="text" name="dCDist"   id="dCDist" placeholder="Dist"  ></td>
+                    <td><input type="text" name="dCDist"   id="dCDist" placeholder="Dist" readonly  style="background-color:#CCC"></td>
                   </tr>
                   <tr>
-                    <td>Thana <span style="color:#F00">*</span> </td>
+                    <td>Thana </td>
                     <td>:</td>
-                    <td><input type="text" name="dCThana"   id="dCThana" placeholder="Thana"  ></td>
+                    <td><input type="text" name="dCThana"   id="dCThana" placeholder="Thana"  readonly style="background-color:#CCC"></td>
                   </tr>
                   <tr>
                     <td>RegistrationNo </td>
@@ -5371,12 +5473,12 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
                     <td><input type="text" name="dCNid"   id="dCNid" placeholder="NID"  ></td>
                   </tr>
                   <tr>
-                    <td> Cont Name <span style="color:#F00">*</span> </td>
+                    <td> Contact Name <span style="color:#F00">*</span> </td>
                      <td>:</td>
                     <td><input type="text" name="dCContactName"   id="dCContactName" placeholder="Contact Name"  ></td>
                   </tr>
                   <tr>
-                    <td>Cont/phone <span style="color:#F00">*</span> </td>
+                    <td>Contact/phone <span style="color:#F00">*</span> </td>
                      <td>:</td>
                     <td><input type="number" name="dCPhone"   id="dCPhone" placeholder="Contact/phone"  >
                   </td>
@@ -5511,8 +5613,67 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
     </div>
 
 
+<!--==Link PAge==-->
+<div class="view" id="page_linkView">
+        <div class="pages">
+         <header style="height:70px">
+          <table width="100%" border="0">
+          <tr>
+            <td width="10%" align="left"></td>
+            <td align="center" style="font-size:18px; font-weight:normal; color:#F8F8F8">Link Path</td>
+            <td width="10%"  ></td> 
+          </tr>
+        </table>
+         
+         
+         
+         </header> 
+            <div class="panel" id="page_link" style="background-color:#EDFEED">
+            </br></br></br></br></br>
+            
+                <!--<div class="card">-->
+                    <!--<h1>Sync</h1>-->
+                      
+                   <!-- </br>-->
+                   
+                            
+                            <div id="myerror_page_link" style="color:#C00"></div> 
+                            <div class="input-group">
+                        
+                       
+                <td style="vertical-align:top; width:100%">
+                 <!--<div id="container" style="max-height:700px;overflow:scroll;">-->
+                 <ul class="list" id="page_link_lv" style="background-color:#EDFEED">
+                        
+                        </ul>
+                  <!--</div>-->
+                
+                  
+                  
+                 </td>
+                
+                
+  
+                 </div>
+                   </div> 
+               <!-- </div>-->
+            </div>
+       
+        <footer>
+        
+                <table width="100%" border="0">
+  <tr>
+    <td align="left">  <a onClick="homePage()" class="icon left" ></a></td>
+     <td >&nbsp;</td>
+    <td width="40%" style="font-size:16px; color:#FFF"></td>
+  </tr>
+</table>	
+         
+		  <!--<a onClick="homePage()" class="icon home" >Home</a>-->
+          
+           </footer>
 
-
+    </div>   
 
   
 <!--================================Prescriptio End=============   --> 
@@ -5529,4 +5690,4 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
     
 </body>
 
-</html>>>>>>>>
+</html>>>>>>>>>>>>
