@@ -11250,11 +11250,11 @@ function confirmDoc(docid) {
 	  $("#myerror_doctorCon_add").html('' )
 	  $("#wait_image_docConAdd").show();
 	  var market_Id=localStorage.visit_market_show.split('|')[1];
-	  alert (docid)
+	 // alert (docid)
 	//var visitDocId=localStorage.visit_client.split('|')[1]	
 	//$("#error_doc_confirm").val(localStorage.report_url+'doc_info_confirm?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&docID='+docid)
 	$.afui.loadContent("#page_doc_confirm",true,true,'right');
-	alert (localStorage.report_url+'doc_info_confirm?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&docID='+docid)
+	//alert (localStorage.report_url+'doc_info_confirm?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&docID='+docid)
   $.ajax(localStorage.report_url+'doc_info_confirm?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&docID='+docid,{
 
 								type: 'POST',
