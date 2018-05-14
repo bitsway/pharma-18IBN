@@ -1524,7 +1524,8 @@ function check_user() {
 	//var  apipath_base_photo_dm='http://127.0.0.1:8000/demo/syncmobile_417_new_ibn/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
 	
 	//var  apipath_base_photo_dm ='http://w02.yeapps.com/ipi/syncmobile_417_new_ibn_newtest/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
-	var  apipath_base_photo_dm ='http://w02.yeapps.com/ipinmd/syncmobile_417_new_ibn_newtest/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
+	//var  apipath_base_photo_dm ='http://w02.yeapps.com/ipinmd/syncmobile_417_new_ibn_newtest/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
+	var  apipath_base_photo_dm ='http://w02.yeapps.com/ipi/syncmobile_417_new_ibn_newtest/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
 	
 	//var  apipath_base_photo_dm='http://a007.yeapps.com/acme/syncmobile_417_new/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
 
@@ -1623,7 +1624,7 @@ function check_user() {
 							
 							//alert (localStorage.sync_date)
 							
-							alert (localStorage.base_url+'check_user_pharma?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode)
+							//alert (localStorage.base_url+'check_user_pharma?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode)
 							//$("#error_logintext").val(localStorage.base_url+'check_user_pharma?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode);
 	
 							$.ajax(localStorage.base_url+'check_user_pharma?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode,{
@@ -11262,7 +11263,7 @@ function confirmDoc(docid) {
 	//var visitDocId=localStorage.visit_client.split('|')[1]	
 	//$("#error_doc_confirm").val(localStorage.report_url+'doc_info_confirm?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&docID='+docid)
 	$.afui.loadContent("#page_doc_confirm",true,true,'right');
-	alert (localStorage.report_url+'doc_info_confirm?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&docID='+docid)
+	//alert (localStorage.report_url+'doc_info_confirm?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&docID='+docid)
   $.ajax(localStorage.report_url+'doc_info_confirm?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&docID='+docid,{
 
 								type: 'POST',
