@@ -1521,7 +1521,7 @@ function check_user() {
 	//Main
 
 	
-	//var  apipath_base_photo_dm='http://127.0.0.1:8000/demo/syncmobile_417_new_ibn/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
+	//var  apipath_base_photo_dm='http://127.0.0.1:8000/demo/syncmobile_417_new_ibn_newtest/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
 	
 	
 	
@@ -11070,9 +11070,9 @@ function page_addDoc() {
 		 $('#addSpaciality').append(opt);
 		
 	}
-	var divValue='<td>SNV Route</td><td>:</td> <td><input type="text" name="addNMDRoute"   id="addNMDRoute" placeholder="SNV Route"  style="background-color:#CCC" ></td>'
+	var divValue='<table width="100%" border="0"><tr><td width="25%">SNV Route</td><td>:</td> <td><input type="text" name="addNMDRoute"   id="addNMDRoute" placeholder="SNV Route"  style="background-color:#CCC" ></td></tr></table>'
 	if (localStorage.cid=='IPINMD'){
-		 divValue='<td>NMD Route</td><td>:</td> <td><input type="text" name="addNMDRoute"   id="addNMDRoute" placeholder="NMD Route"  style="background-color:#CCC" ></td>'
+		 divValue='<table width="100%" border="0"><tr><td width="25%">NMD Route</td><td>:</td> <td><input type="text" name="addNMDRoute"   id="addNMDRoute" placeholder="NMD Route"  style="background-color:#CCC" ></td></tr></table>'
 		
 		
 	}
