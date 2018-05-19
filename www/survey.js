@@ -11070,9 +11070,9 @@ function page_addDoc() {
 		 $('#addSpaciality').append(opt);
 		
 	}
-	var divValue='<tr><td>SNV Route</td><td>:</td> <td><input type="text" name="addNMDRoute"   id="addNMDRoute" placeholder="SNV Route"  style="background-color:#CCC" ></td></tr>'
+	var divValue='<td>SNV Route</td><td>:</td> <td><input type="text" name="addNMDRoute"   id="addNMDRoute" placeholder="SNV Route"  style="background-color:#CCC" ></td>'
 	if (localStorage.cid=='IPINMD'){
-		 divValue='<tr><td>NMD Route</td><td>:</td> <td><input type="text" name="addNMDRoute"   id="addNMDRoute" placeholder="NMD Route"  style="background-color:#CCC" ></td></tr>'
+		 divValue='<td>NMD Route</td><td>:</td> <td><input type="text" name="addNMDRoute"   id="addNMDRoute" placeholder="NMD Route"  style="background-color:#CCC" ></td>'
 		
 		
 	}
