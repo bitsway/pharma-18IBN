@@ -11070,6 +11070,13 @@ function page_addDoc() {
 		 $('#addSpaciality').append(opt);
 		
 	}
+	var divValue='<tr><td>SNV Route</td><td>:</td> <td><input type="text" name="addNMDRoute"   id="addNMDRoute" placeholder="SNV Route"  style="background-color:#CCC" ></td></tr>'
+	if (localStorage.cid=='IPINMD'){
+		 divValue='<tr><td>NMD Route</td><td>:</td> <td><input type="text" name="addNMDRoute"   id="addNMDRoute" placeholder="NMD Route"  style="background-color:#CCC" ></td></tr>'
+		
+		
+	}
+	$('#routeType').html(divValue);
 //========================MicroUnin Combo=========================	
 //alert (localStorage.report_url+'microUnionReady?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&route='+market_Id)
 $.ajax(localStorage.report_url+'microUnionReady?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&route='+market_Id,{
