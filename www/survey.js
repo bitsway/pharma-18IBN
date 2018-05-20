@@ -10530,7 +10530,12 @@ function page_doctor_profile(getData) {
 									var dMobile=result_string.split('<fdfd>')[6]
 									var dCAddress=result_string.split('<fdfd>')[7]
 									var dDistrict=result_string.split('<fdfd>')[8]
+									
 									var dThana=result_string.split('<fdfd>')[9]
+									var dOtherChamber=result_string.split('<fdfd>')[10]
+									var dPharmaRoute=result_string.split('<fdfd>')[11]
+									var dNMDRoute=result_string.split('<fdfd>')[12]
+									
 									$("#dName").val(dName)
 									$("#dSpaciality").val(dSpaciality)
 									$("#dDegree").val(dDegree)
@@ -10538,6 +10543,10 @@ function page_doctor_profile(getData) {
 									$("#dMDay").val(dMDay)
 									$("#dMobile").val(dMobile)
 									$("#dCAddress").val(dCAddress)
+									
+									$("#dOtherChamber").val(dOtherChamber)
+									$("#dPharmaRoute").val(dPharmaRoute)
+									$("#dNMDRoute").val(dNMDRoute)
 									
 									//$("#dDistrict").val(dDistrict+'|'+dThana)
 									//$("#dThana").val(dThana)
