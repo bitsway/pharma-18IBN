@@ -1586,9 +1586,9 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
                     </td>
                   </tr>
                    <tr>
-                    <td>SNV Route</td>
+                    <td>NMD Route</td>
                      <td>:</td>
-                    <td><input type="text" name="dNMDRoute"   id="dNMDRoute" placeholder="SNV Route" readonly style="background-color:#CCC" >
+                    <td><input type="text" name="dNMDRoute"   id="dNMDRoute" placeholder="NMD Route" readonly style="background-color:#CCC" >
                     </td>
                   </tr>
                   <!--<tr>
@@ -1829,7 +1829,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
                      <td>:</td>
                     <td>
                     
-                       <select name="addMicrounion" id="addMicrounion">
+                       <select name="adaddMicrouniondDistrict" id="addMicrounion">
                                               
                         </select>                 
                     
@@ -1916,7 +1916,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
                   </tr>
                   <td>Other Chamber</td>
                      <td>:</td>
-                    <td><textarea name="addOtherChamber" id="addOtherChamber"  rows="3" placeholder="Other Chamber"></textarea>
+                    <td><textarea name="dOtherChamber" id="dOtherChamber"  rows="3" placeholder="Other Chamber"></textarea>
                    </td>
                   </tr>
                   
@@ -1993,8 +1993,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
                     <!--<h1>Sync</h1>-->
                     <img id="wait_image_dList" style="width:50px" src="loading.gif" alt="">
                     <input id="error_dListTxt"  type="hidden" >
-                    <div id="error_dList" style="color:#C00"></div> 	
-                    <div style="background-color:#008080; color:#FFF; font-size:20px; height:30px" align="center">Pending Doctor</div>			
+                    <div id="error_dList" style="color:#C00"></div> 				
                         <div id="dList"  style="color:#2232BD; overflow:scroll ; overflow-style:auto"></div>
                         <br>
                         
@@ -3414,128 +3413,76 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
             <input type="hidden" name="error_doc_confirm"    id="error_doc_confirm" placeholder="Name"  >
 
 				<br>
-                <table width="100%" border="0">
-                	 <tr>
-                    <td width="80%">
-                            <table width="100%" border="0">
-                              <tr>
-                                <td>Category</td>
-                                 <td>:</td>
-                                <td><div id="docConDCategory" ></div></td>
-                              <td style="color:#F00; font-size:25px"></td>
-                              </tr>
-                            
-                              <tr style="font-weight:bold">
-                                <td >Name</td>
-                                <td>:</td>
-                                <td><div id="docConName" ></div></td>
-                                <td style="color:#F00; font-size:25px"></td>
-                              </tr>
-                              <tr>
-                                <td>Specialty</td>
-                                 <td>:</td>
-                                <td><div id="docConSpeciality" ></div>
-                                </td>
-                                <td ></td>
-                              </tr>
-                              <tr>
-                                <td>Microunion</td>
-                                 <td>:</td>
-                                <td><div id="docConMicrounion" ></div>
-                                </td>
-                                <td ></td>
-                              </tr>
-                              
-                              <tr>
-                                <td>Degree</td>
-                                 <td>:</td>
-                                <td><div id="docConDegree" ></div></td>
-                                 <td ></td>
-                              </tr>
-                              <tr>
-                                <td>Attached Institute</td>
-                                 <td>:</td>
-                                <td><div id="docConAttachedInstitute" ></div></td>
-                                 <td ></td>
-                              </tr>
-                              <tr>
-                                <td>Service/KOL/DSR</td>
-                                 <td>:</td>
-                                <td><div id="docConServiceKOLDSR" ></div></td>
-                                 <td ></td>
-                              </tr>
-                              <tr>
-                                <td>Service ID</td>
-                                 <td>:</td>
-                                <td><div id="docConServiceID" ></div></td>
-                                 <td ></td>
-                              </tr>
-                              <tr>
-                                <td>Third party ID</td>
-                                 <td>:</td>
-                                <td><div id="docConThirdpartyID" ></div></td>
-                                 <td ></td>
-                              </tr>
-                              <tr>
-                                <td>DOB</td>
-                                 <td>:</td>
-                                <td><div id="docConDOB" ></div></td>
-                                 <td ></td>
-                              </tr>
-                               <tr>
-                                <td>Marriage Day</td>
-                                 <td>:</td>
-                                <td><div id="docConMDay" ></div></td>
-                                 <td ></td>
-                              </tr>
-                              <tr>
-                                <td>Mobile</td>
-                                 <td>:</td>
-                                <td><div id="docConMobNum" ></div></td>
-                                <td style="color:#F00; font-size:25px"></td>
-                              </tr>
-                              <tr>
-                           <tr>
-                                <td width="100px">Chamber Address</td>
-                                 <td>:</td>
-                                <td><div id="docConChamberAddress" ></div> </td>
-                               <td style="color:#F00; font-size:25px"></td>
-                              </tr>
-                              <tr>
-                                <td width="100px">Other Chamber</td>
-                                 <td>:</td>
-                                <td><div id="docConOtherChamber" ></div> </td>
-                               <td style="color:#F00; font-size:25px"></td>
-                              </tr>
-                              <tr>
-                                <td>Pharma Route</td>
-                                 <td>:</td>
-                                <td>
-                                 <input name="pharma_route" id="pharma_route"   type="text" placeholder="Pharma Route">
-                                <!--<div id="docConDist" ></div>--></td>
-                                <td ></td>
-                              </tr>
-                              <tr>
-                                <td>SNV Route</td>
-                                 <td>:</td>
-                                <td>
-                                <input name="nmd_route" id="nmd_route"   type="text" placeholder="NMD Route">
-                                <!--<div id="docConThana" ></div>--></td>
-                                <td ></td>
-                              </tr>
-                              
-                            </table>
-                         </td>
-                         
-                         <td align="center" style="vertical-align:top">
-                         <div id="pendingType">
-                         </div>
-                         <div id="removeNote" style="color:#F00; font-size:12px">
-                         </div>
-                         
-                         </td>
-                         </tr>
-                         </table>
+                
+     			<table width="100%" border="0">
+                  <tr style="font-weight:bold">
+                    <td >Name</td>
+                    <td>:</td>
+                    <td><div id="docConName" ></div></td>
+                    <td style="color:#F00; font-size:25px"></td>
+                  </tr>
+                  <tr>
+                    <td>Specialty</td>
+                     <td>:</td>
+                    <td><div id="docConSpeciality" ></div>
+                    </td>
+                    <td ></td>
+                  </tr>
+                  <tr>
+                    <td>Degree</td>
+                     <td>:</td>
+                    <td><div id="docConDegree" ></div></td>
+                     <td ></td>
+                  </tr>
+                  <tr>
+                    <td>Category</td>
+                     <td>:</td>
+                    <td><div id="docConDCategory" ></div></td>
+                  <td style="color:#F00; font-size:25px"></td>
+                  </tr>
+                  <tr>
+                    <td>DOB</td>
+                     <td>:</td>
+                    <td><div id="docConDOB" ></div></td>
+                     <td ></td>
+                  </tr>
+                   <tr>
+                    <td>Marriage Day</td>
+                     <td>:</td>
+                    <td><div id="docConMDay" ></div></td>
+                     <td ></td>
+                  </tr>
+                  <tr>
+                    <td>Mobile</td>
+                     <td>:</td>
+                    <td><div id="docConMobNum" ></div></td>
+                    <td style="color:#F00; font-size:25px"></td>
+                  </tr>
+                  <tr>
+               <tr>
+                    <td width="100px">Chamber Address</td>
+                     <td>:</td>
+                    <td><div id="docConAdd" ></div> </td>
+                   <td style="color:#F00; font-size:25px"></td>
+                  </tr>
+                  <tr>
+                    <td>Pharma Route</td>
+                     <td>:</td>
+                    <td>
+                     <input name="pharma_route" id="pharma_route"   type="text" placeholder="Pharma Route">
+                    <!--<div id="docConDist" ></div>--></td>
+                    <td ></td>
+                  </tr>
+                  <tr>
+                    <td>NMD Route</td>
+                     <td>:</td>
+                    <td>
+                    <input name="nmd_route" id="nmd_route"   type="text" placeholder="NMD Route">
+                    <!--<div id="docConThana" ></div>--></td>
+                    <td ></td>
+                  </tr>
+                  
+                </table>
                 <img id="wait_image_docConAdd" style="width:50px" src="loading.gif" alt="">	
 			<div id="myerror_doctorCon_add" style="color:#C00"></div>
 				<br>
@@ -5806,4 +5753,4 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
     
 </body>
 
-</html>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+</html>>>>>>>>>>>>>>>>>>>>>>>>
