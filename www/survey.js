@@ -1706,7 +1706,7 @@ function check_user() {
 													localStorage.cl_subcatStr=resultArray[39]
 													
 													localStorage.repType=resultArray[40]
-													
+													//alert (localStorage.repType)
 													
 													
 													
@@ -11186,7 +11186,7 @@ if  (((dPharmaRoute=='') || (dNMDRoute=='')) &(localStorage.repType=='SIN')){
 	$("#myerror_doctor_add").html('' )
 	$("#wait_image_docAdd").show();//$("#doctor_add").val(localStorage.report_url+'doc_add_submit?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&route='+market_Id+'&routeName='+market_name+'&dName='+dName+'&dSpaciality='+dSpaciality+'&dDegree='+dDegree+'&dDOB='+dDOB+'&dMDay='+dMDay+'&dMobile='+dMobile+'&dCAddress='+dCAddress+'&dCategory='+dCategory+'&dDist='+dDist+'&dThana='+dThana+'&dMicroUnion='+dMicroUnion)
 	//alert (localStorage.report_url+'doc_add_submit?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&route='+market_Id+'&dName='+dName+'&dSpaciality='+dSpaciality+'&dDegree='+dDegree+'&dCategory='+dCategory+'&dMicroUnion='+dMicroUnion+'&dAttachedInstitute='+dAttachedInstitute+'&dS_K_D='+dS_K_D+'&dService='+dService+'&dParty='+dParty+'&dDOB='+dDOB+'&dMDay='+dMDay+'&dMobile='+dMobile+'&dCAddress='+dCAddress+'&dOtherChamber='+dOtherChamber+'&dPharmaRoute='+dPharmaRoute+'&dNMDRoute='+dNMDRoute)
-		$.ajax(localStorage.report_url+'doc_add_submit?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&route='+market_Id+'&dName='+dName+'&dSpaciality='+dSpaciality+'&dDegree='+dDegree+'&dCategory='+dCategory+'&dMicroUnion='+dMicroUnion+'&dAttachedInstitute='+dAttachedInstitute+'&dS_K_D='+dS_K_D+'&dService='+dService+'&dParty='+dParty+'&dDOB='+dDOB+'&dMDay='+dMDay+'&dMobile='+dMobile+'&dCAddress='+dCAddress+'&dOtherChamber='+dOtherChamber+'&dPharmaRoute='+dPharmaRoute+'&dNMDRoute='+dNMDRoute,{
+		$.ajax(localStorage.report_url+'doc_add_submit?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&route='+market_Id+'&dName='+dName+'&dSpaciality='+dSpaciality+'&dDegree='+dDegree+'&dCategory='+dCategory+'&dMicroUnion='+dMicroUnion+'&dAttachedInstitute='+dAttachedInstitute+'&dS_K_D='+dS_K_D+'&dService='+dService+'&dParty='+dParty+'&dDOB='+dDOB+'&dMDay='+dMDay+'&dMobile='+dMobile+'&dCAddress='+dCAddress+'&dOtherChamber='+dOtherChamber+'&dPharmaRoute='+dPharmaRoute+'&dNMDRoute='+dNMDRoute+'&user_type='+localStorage.user_type+'&repType='+localStorage.repType,{
 
 								type: 'POST',
 								timeout: 30000,
@@ -11246,7 +11246,7 @@ function page_dList() {
 	//alert (localStorage.report_url+'doc_list?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode)
 	//$("#error_dListTxt").val(localStorage.report_url+'doc_list?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode)
 	//alert (localStorage.report_url+'doc_list?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode)
-  $.ajax(localStorage.report_url+'doc_list?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode,{
+  $.ajax(localStorage.report_url+'doc_list?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&repType='+localStorage.repType,{
 
 								type: 'POST',
 								timeout: 30000,
@@ -11504,7 +11504,7 @@ function confirmDocSubmit() {
 	  $("#wait_image_docConAdd").show();
 		//$("#error_doc_confirm").val(localStorage.report_url+'confirmDoc?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&docID='+localStorage.confirmDoc)
 	   //alert (localStorage.report_url+'confirmDoc?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&docID='+localStorage.confirmDoc+'&pharma_route='+pharma_route+'&nmd_route='+nmd_route)
-	  $.ajax(localStorage.report_url+'confirmDoc?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&docID='+localStorage.confirmDoc+'&pharma_route='+pharma_route+'&nmd_route='+nmd_route,{
+	  $.ajax(localStorage.report_url+'confirmDoc?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&docID='+localStorage.confirmDoc+'&pharma_route='+pharma_route+'&nmd_route='+nmd_route+'&repType='+localStorage.repType,{
 	
 									type: 'POST',
 									timeout: 30000,
