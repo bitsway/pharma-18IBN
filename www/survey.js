@@ -12154,7 +12154,7 @@ function chemist_submit() {
 	
 	
 	var ChemistName=$("#addCName").val()
-	var Address_Line_1=$("#addCAddress").val()
+	var Address_Line_1=$("#addClAddress").val()
 	var district=$("#addCDist").val()
 	var thana=$("#addCThana").val()
 	var RegistrationNo=$("#addCRegNo").val()
@@ -12179,7 +12179,7 @@ function chemist_submit() {
 	//alert (imageName)
 	ChemistName=ChemistName.replace(",","").replace("'","").replace(";","").replace('"','')
 	var error_flag=0
-	alert ('Address_Line_1: '+Address_Line_1+'Contact_Name: '+Contact_Name+'Contact_phone: '+Contact_phone+'Category: '+Category+'SubCategory: '+SubCategory+'Cash_Credit: '+Cash_Credit+'Address_Line_1: '+Credit_Limit)
+	//alert ('Address_Line_1: '+Address_Line_1)
 	
 	
 	if  ((Address_Line_1=='') || (Contact_Name=='' ) ||  (Contact_phone=='') || (Category=='') || (SubCategory='') || (Cash_Credit=='') || (Credit_Limit=='')){
