@@ -12179,6 +12179,8 @@ function chemist_submit() {
 	//alert (imageName)
 	ChemistName=ChemistName.replace(",","").replace("'","").replace(";","").replace('"','')
 	var error_flag=0
+	alert ('Address_Line_1: '+Address_Line_1+'Contact_Name: '+Contact_Name+'Contact_phone: '+Contact_phone+'Category: '+Category+'SubCategory: '+SubCategory+'Cash_Credit: '+Cash_Credit+'Address_Line_1: '+Credit_Limit)
+	
 	
 	if  ((Address_Line_1=='') || (Contact_Name=='' ) ||  (Contact_phone=='') || (Category=='') || (SubCategory='') || (Cash_Credit=='') || (Credit_Limit=='')){
 		error_flag=1
