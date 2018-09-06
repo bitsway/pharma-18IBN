@@ -11361,9 +11361,10 @@ function confirmDoc(docid) {
 									$("#docConChamberAddress").html(dCAddress);
 									$("#docConOtherChamber").html(otherChamber);	
 									$("#pharma_route").val(pharma_route);
-									if (localStorage.repType=='SIN'){$("#nmd_route").val(snv_route);}	
-									else if (snv_route!='SIN'){$("#nmd_route").val(snv_route);}	
-									else{ $("#nmd_route").val(nmd_route);	}
+									
+									if (snv_route!=''){$("#nmd_route").val(snv_route);}	
+									if (nmd_route!=''){$("#nmd_route").val(nmd_route);}	
+									
 									
 									
 									
