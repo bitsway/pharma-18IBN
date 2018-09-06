@@ -1521,19 +1521,20 @@ function check_user() {
 	//Main
 
 	
-	//var  apipath_base_photo_dm='http://127.0.0.1:8000/demo/syncmobile_417_new_ibn_newtest/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
+//var  apipath_base_photo_dm='http://127.0.0.1:8000/demo/syncmobile_417_new_ibn_newtest/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
 	
 	
 	
-	//var  apipath_base_photo_dm ='http://w02.yeapps.com/ipinmd/syncmobile_417_new_ibn_newtest/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
-	//var  apipath_base_photo_dm ='http://w02.yeapps.com/ipi/syncmobile_417_new_ibn_newtest/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
+var  apipath_base_photo_dm ='http://w02.yeapps.com/ipinmd/syncmobile_417_new_ibn_newtest/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
+
+//var  apipath_base_photo_dm ='http://w02.yeapps.com/ipi/syncmobile_417_new_ibn_newtest/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
 	
-	//var  apipath_base_photo_dm='http://a007.yeapps.com/acme/syncmobile_417_new/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
+//var  apipath_base_photo_dm='http://a007.yeapps.com/acme/syncmobile_417_new/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
 
 
 
   // var apipath_base_photo_dm ='http://e2.businesssolutionapps.com/welcome/dmpath_live_new/get_path?CID='+cid +'&HTTPPASS=e99business321cba'
- var apipath_base_photo_dm ='http://e2.businesssolutionapps.com/welcome/dmpath_live_new_tour/get_path?CID='+cid +'&HTTPPASS=e99business321cba'
+ //var apipath_base_photo_dm ='http://e2.businesssolutionapps.com/welcome/dmpath_live_new_tour/get_path?CID='+cid +'&HTTPPASS=e99business321cba'
 
 	var user_id=$("#user_id").val();
 	var user_pass=$("#user_pass").val();
@@ -11501,9 +11502,12 @@ function confirmDocSubmit() {
 		pharma_route= $("#pharma_route").val();
 		nmd_route= $("#nmd_route").val();
 		
-		if ((pharma_route=='') || (nmd_route=='')){ 
-			$("#myerror_doctorCon_add").html('Please entry SNV & Pharma route ');}else{
+		
+		//if ((pharma_route=='') || (nmd_route=='')){ 
+		if (pharma_route==''){ 
+			$("#myerror_doctorCon_add").html('Please entry Pharma route ');}else{
 			$("#myerror_doctorCon_add").html('' )
+			
 	  $("#wait_image_docConAdd").show();
 		//$("#error_doc_confirm").val(localStorage.report_url+'confirmDoc?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&docID='+localStorage.confirmDoc)
 	  // alert (localStorage.report_url+'confirmDoc?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&docID='+localStorage.confirmDoc+'&pharma_route='+pharma_route+'&nmd_route='+nmd_route+'&repType='+localStorage.repType)
