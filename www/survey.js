@@ -10638,7 +10638,7 @@ function docProfileSubmit() {
 	dDegree=$("#dDegree").val()
 	
 	dCategory=$("#dCategory").val()
-	dMicrounion=$("#dDistrict").val()//Microunion
+	dMicrounion=$("#dDistrict1").val()//Microunion
 	dAttachedInstitute=$("#dAttachedInstitute").val()
 	dS_K_D=$("#dS_K_D").val()
 	dService=$("#dService").val()
@@ -10647,9 +10647,9 @@ function docProfileSubmit() {
 	dDOB=$("#dDOB").val()
 	dMDay=$("#dMDay").val()
 	dMobile=$("#dMobile").val()
-	dCAddress=$("#dCAddress").val()
+	dCAddress=$("#dCAddress2").val()
 	
-	dOtherChamber=$("#dOtherChamber").val()
+	dOtherChamber=$("#dOtherChamber3").val()
 	dPharmaRoute=$("#dPharmaRoute").val()
 	dNMDRoute=$("#dNMDRoute").val()
 	//dThana=$("#dThana").val()
