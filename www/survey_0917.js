@@ -1525,12 +1525,12 @@ function check_user() {
 	
 	
 
-var  apipath_base_photo_dm ='http://w02.yeapps.com/ipi/syncmobile_417_new_ibn_newtest/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
+//var  apipath_base_photo_dm ='http://w02.yeapps.com/ipi/syncmobile_417_new_ibn_newtest/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
 	
 //var  apipath_base_photo_dm='http://a007.yeapps.com/acme/syncmobile_417_new/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
 
 
- //var apipath_base_photo_dm ='http://e2.businesssolutionapps.com/welcome/dmpath_ibn_new_version/get_path?CID='+cid +'&HTTPPASS=e99business321cba'
+ var apipath_base_photo_dm ='http://e2.businesssolutionapps.com/welcome/dmpath_ibn_new_version/get_path?CID='+cid +'&HTTPPASS=e99business321cba'
 
 	var user_id=$("#user_id").val();
 	var user_pass=$("#user_pass").val();
@@ -10495,7 +10495,7 @@ function page_doctor_profile(getData) {
 	$(".visit_client").html(localStorage.visit_client);
 	//alert (localStorage.visit_client)
 	$("#doctor_prof").val(localStorage.report_url+'doc_info?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&route='+market_Id+'&docId='+visitDocId)
-	alert (localStorage.report_url+'doc_info?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&route='+market_Id+'&docId='+visitDocId)
+	//alert (localStorage.report_url+'doc_info?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&route='+market_Id+'&docId='+visitDocId)
 		$.ajax(localStorage.report_url+'doc_info?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&route='+market_Id+'&docId='+visitDocId,{
 
 								type: 'POST',
@@ -10535,16 +10535,9 @@ function page_doctor_profile(getData) {
 									var dPharmaRoute=result_string.split('<fdfd>')[11]
 									var dNMDRoute=result_string.split('<fdfd>')[12]
 									
-									var service_id=result_string.split('<fdfd>')[13]
-									var third_party_id=result_string.split('<fdfd>')[14]
-									var dS_K_D=result_string.split('<fdfd>')[15]
-									var attached_institution=result_string.split('<fdfd>')[16]
-									var microunion=result_string.split('<fdfd>')[17]
-									
 									$("#dName").val(dName)
 									$("#dSpaciality").val(dSpaciality)
 									$("#dDegree").val(dDegree)
-									
 									$("#dDOB").val(dDOB)
 									$("#dMDay").val(dMDay)
 									$("#dMobile").val(dMobile)
@@ -10554,14 +10547,9 @@ function page_doctor_profile(getData) {
 									$("#dPharmaRoute").val(dPharmaRoute)
 									$("#dNMDRoute").val(dNMDRoute)
 									
-									
 									//$("#dDistrict").val(dDistrict+'|'+dThana)
-									$("#dService").val(service_id)
-									$("#dParty").val(third_party_id)
-									$("#dS_K_D").val(dS_K_D)
-									$("#dAttachedInstitute").val(attached_institution)
-									//$("#dDistrict").val(microunion)
-									
+									//$("#dThana").val(dThana)
+									//$("#dCategory").val(dCategory)
 									
 									catList=dCategory.split(',')
 									$('#dCategory').empty();
@@ -10607,9 +10595,8 @@ function page_doctor_profile(getData) {
 													
 													$('#dMicrounion').empty();
 													$('#dDistrict').empty();
-													//var optE='<option value="'+dDistrict+'|'+dThana+'">'+dDistrict+'|'+dThana+'</option>'
-													alert (microunion)
-													var optE='<option value="'+microunion+'" selected>'+microunion+'</option>'
+													var optE='<option value="'+dDistrict+'|'+dThana+'">'+dDistrict+'|'+dThana+'</option>'
+													
 													$('#dDistrict').append(optE);
 													for (var s=0; s < resultList.length; s++){
 														var opt='<option value="'+resultList[s]+'">'+resultList[s]+'</option>'
@@ -10635,7 +10622,7 @@ function page_doctor_profile(getData) {
 						}
 					  }
 			 });//end ajax
-	//$("#dDistrict").val(microunion)
+	
 	$.afui.loadContent("#page_doctor_profile",true,true,'right');
 	
 }
