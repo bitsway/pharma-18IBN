@@ -11305,7 +11305,7 @@ function confirmDoc(docid) {
 	//var visitDocId=localStorage.visit_client.split('|')[1]	
 	//$("#error_doc_confirm").val(localStorage.report_url+'doc_info_confirm?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&docID='+docid)
 	$.afui.loadContent("#page_doc_confirm",true,true,'right');
-	alert (localStorage.report_url+'doc_info_confirm?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&docID='+docid)
+	//alert (localStorage.report_url+'doc_info_confirm?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&docID='+docid)
   $.ajax(localStorage.report_url+'doc_info_confirm?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&docID='+docid,{
 
 								type: 'POST',
@@ -11791,7 +11791,7 @@ function onFail_getDocImage(message) {
 function checkInbox() {	
 			//alert (localStorage.report_url+'checkInbox?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode)
 				
-		  $.ajax(localStorage.report_url+'checkInbox?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&version=14',{
+		  $.ajax(localStorage.report_url+'checkInbox?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&version=15',{
 		
 										type: 'POST',
 										timeout: 30000,
