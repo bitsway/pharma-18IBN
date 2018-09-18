@@ -1525,12 +1525,12 @@ function check_user() {
 	
 	
 
-var  apipath_base_photo_dm ='http://w02.yeapps.com/ipi/syncmobile_417_new_ibn_newtest/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
+//var  apipath_base_photo_dm ='http://w02.yeapps.com/ipi/syncmobile_417_new_ibn_newtest/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
 	
 //var  apipath_base_photo_dm='http://a007.yeapps.com/acme/syncmobile_417_new/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
 
 
- //var apipath_base_photo_dm ='http://e2.businesssolutionapps.com/welcome/dmpath_ibn_new_version/get_path?CID='+cid +'&HTTPPASS=e99business321cba'
+ var apipath_base_photo_dm ='http://e2.businesssolutionapps.com/welcome/dmpath_ibn_new_version/get_path?CID='+cid +'&HTTPPASS=e99business321cba'
 
 	var user_id=$("#user_id").val();
 	var user_pass=$("#user_pass").val();
@@ -10651,7 +10651,7 @@ function docProfileSubmit() {
 	dDegree=$("#dDegree").val()
 	
 	dCategory=$("#dCategory").val()
-	dMicrounion=$("#dDistrict1").val()//Microunion
+	dMicrounion=$("#dDistrict").val()//Microunion
 	dAttachedInstitute=$("#dAttachedInstitute").val()
 	dS_K_D=$("#dS_K_D").val()
 	dService=$("#dService").val()
@@ -10660,9 +10660,9 @@ function docProfileSubmit() {
 	dDOB=$("#dDOB").val()
 	dMDay=$("#dMDay").val()
 	dMobile=$("#dMobile").val()
-	dCAddress=$("#dCAddress2").val()
+	dCAddress=$("#dCAddress").val()
 	
-	dOtherChamber=$("#dOtherChamber3").val()
+	dOtherChamber=$("#dOtherChamber").val()
 	dPharmaRoute=$("#dPharmaRoute").val()
 	dNMDRoute=$("#dNMDRoute").val()
 	//dThana=$("#dThana").val()
@@ -10675,7 +10675,7 @@ function docProfileSubmit() {
 	}else{
 		$("#wait_image_docProf").show();$("#myerror_doctor_prof").html('' )
 	//$("#doctor_prof").val(localStorage.report_url+'doc_info_submit?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&route='+market_Id+'&docId='+visitDocId+'&dName='+dName+'&dSpaciality='+dSpaciality+'&dDegree='+dDegree+'&dDOB='+dDOB+'&dMDay='+dMDay+'&dMobile='+dMobile+'&dCAddress='+dCAddress+'&dCategory='+dCategory+'&dDist='+dDist+'&dThana='+dThana)
-	//alert (localStorage.report_url+'doc_info_submit?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&route='+market_Id+'&docId='+visitDocId+'&dName='+dName+'&dSpaciality='+dSpaciality+'&dDegree='+dDegree+'&dCategory='+dCategory+'&dDist='+dDist+'&dAttachedInstitute='+dAttachedInstitute+'&dS_K_D='+dS_K_D+'&dService='+dService+'&dParty='+dParty+'&dDOB='+dDOB+'&dMDay='+dMDay+'&dMobile='+dMobile+'&dCAddress='+dCAddress+'&dOtherChamber='+dOtherChamber+'&dPharmaRoute='+dPharmaRoute+'&dNMDRoute='+dNMDRoute)
+	//	 alert (localStorage.report_url+'doc_info_submit?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&route='+market_Id+'&docId='+visitDocId+'&dName='+dName+'&dSpaciality='+dSpaciality+'&dDegree='+dDegree+'&dCategory='+dCategory+'&dMicrounion='+dMicrounion+'&dAttachedInstitute='+dAttachedInstitute+'&dS_K_D='+dS_K_D+'&dService='+dService+'&dParty='+dParty+'&dDOB='+dDOB+'&dMDay='+dMDay+'&dMobile='+dMobile+'&dCAddress='+dCAddress+'&dOtherChamber='+dOtherChamber+'&dPharmaRoute='+dPharmaRoute+'&dNMDRoute='+dNMDRoute)
 		$.ajax(localStorage.report_url+'doc_info_submit?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&route='+market_Id+'&docId='+visitDocId+'&dName='+dName+'&dSpaciality='+dSpaciality+'&dDegree='+dDegree+'&dCategory='+dCategory+'&dMicrounion='+dMicrounion+'&dAttachedInstitute='+dAttachedInstitute+'&dS_K_D='+dS_K_D+'&dService='+dService+'&dParty='+dParty+'&dDOB='+dDOB+'&dMDay='+dMDay+'&dMobile='+dMobile+'&dCAddress='+dCAddress+'&dOtherChamber='+dOtherChamber+'&dPharmaRoute='+dPharmaRoute+'&dNMDRoute='+dNMDRoute,{
 
 								type: 'POST',
@@ -11305,7 +11305,7 @@ function confirmDoc(docid) {
 	//var visitDocId=localStorage.visit_client.split('|')[1]	
 	//$("#error_doc_confirm").val(localStorage.report_url+'doc_info_confirm?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&docID='+docid)
 	$.afui.loadContent("#page_doc_confirm",true,true,'right');
-	//alert (localStorage.report_url+'doc_info_confirm?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&docID='+docid)
+	alert (localStorage.report_url+'doc_info_confirm?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&docID='+docid)
   $.ajax(localStorage.report_url+'doc_info_confirm?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&docID='+docid,{
 
 								type: 'POST',
@@ -11377,11 +11377,12 @@ function confirmDoc(docid) {
 									
 									
 									
-									
+									if (field1=='undefined'){field1=''}
 									if ((new_doc==1) && (status=='ACTIVE')){$("#pendingType").html('<span style="color:#007900; font-size:18px">ADDITION <br>'+field1+'</span>');}
 									if ((new_doc==0) && (status=='ACTIVE')){$("#pendingType").html('<span style="color:#00F; font-size:18px">UPDATE <br>'+field1+'</span>');}
-									if ((new_doc==0) && (status=='Rreq')){$("#pendingType").html('<span style="color:#F00; font-size:18px">REMOVAL</span>');
-									$("#removeNote").html(note);	}
+									if ((new_doc==0) && (status=='Rreq')){$("#pendingType").html('<span style="color:#F00; font-size:18px">REMOVAL</span>');}
+									
+									if ((new_doc==0) && (status=='Rreq') && (note!='undefined')){ $("#removeNote").html(note);	}
 
 								
 							}else{	
