@@ -10495,7 +10495,7 @@ function page_doctor_profile(getData) {
 	$(".visit_client").html(localStorage.visit_client);
 	//alert (localStorage.visit_client)
 	$("#doctor_prof").val(localStorage.report_url+'doc_info?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&route='+market_Id+'&docId='+visitDocId)
-	alert (localStorage.report_url+'doc_info?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&route='+market_Id+'&docId='+visitDocId)
+	//alert (localStorage.report_url+'doc_info?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&route='+market_Id+'&docId='+visitDocId)
 		$.ajax(localStorage.report_url+'doc_info?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&route='+market_Id+'&docId='+visitDocId,{
 
 								type: 'POST',
@@ -10608,7 +10608,7 @@ function page_doctor_profile(getData) {
 													$('#dMicrounion').empty();
 													$('#dDistrict').empty();
 													//var optE='<option value="'+dDistrict+'|'+dThana+'">'+dDistrict+'|'+dThana+'</option>'
-													alert (microunion)
+													//alert (microunion)
 													var optE='<option value="'+microunion+'" selected>'+microunion+'</option>'
 													$('#dDistrict').append(optE);
 													for (var s=0; s < resultList.length; s++){
@@ -10822,29 +10822,29 @@ function page_chemist_profile(getData) {
 												
 												$('#dCCash_Credit').empty();
 										if (Cash_Credit==''){
-											$('#dCCash_Credit').append('<option selected value="NeedToSet">NeedToSet</option>')
-											$('#dCCash_Credit').append('<option selected value="Cash">Cash</option>')
-											$('#dCCash_Credit').append('<option selected value="Credit">Credit</option>')
+											$('#dCCash_Credit').append('<option  value="NeedToSet">NeedToSet</option>')
+											$('#dCCash_Credit').append('<option  value="Cash">Cash</option>')
+											$('#dCCash_Credit').append('<option  value="Credit">Credit</option>')
 										}
 										else{
-										$('#dCCash_Credit').append('<option value="'+Cash_Credit+'">'+Cash_Credit+'</option>')
-										$('#dCCash_Credit').append('<option selected value="Cash">Cash</option>')
-										$('#dCCash_Credit').append('<option selected value="Credit">Credit</option>')
-										$('#dCCash_Credit').append('<option selected value="NeedToSet">NeedToSet</option>')
+										$('#dCCash_Credit').append('<option selected value="'+Cash_Credit+'">'+Cash_Credit+'</option>')
+										$('#dCCash_Credit').append('<option  value="Cash">Cash</option>')
+										$('#dCCash_Credit').append('<option  value="Credit">Credit</option>')
+										$('#dCCash_Credit').append('<option  value="NeedToSet">NeedToSet</option>')
 										}
 													
 													
 									$('#dCStatus').empty();
-									if (Status==''){
+									//if (Status==''){
 									
-									$('#dCStatus').append('<option  value="ACTIVE">ACTIVE</option>')
-									$('#dCStatus').append('<option  value="INACTIVE">INACTIVE</option>')
-									}
-									else{
-									$('#dCStatus').append('<option selected value="'+Status+'">'+Status+'</option>')
-									$('#dCStatus').append('<option  value="ACTIVE">ACTIVE</option>')
-									$('#dCStatus').append('<option  value="INACTIVE">INACTIVE</option>')
-										}	
+									$('#dCStatus').append('<option  value="'+Status+'">'+Status+'</option>')
+									//$('#dCStatus').append('<option  value="INACTIVE">INACTIVE</option>')
+									// }
+									// else{
+									// $('#dCStatus').append('<option selected value="'+Status+'">'+Status+'</option>')
+									// $('#dCStatus').append('<option  value="ACTIVE">ACTIVE</option>')
+									// $('#dCStatus').append('<option  value="INACTIVE">INACTIVE</option>')
+										// }	
 													
 												
 												//====================setCombo end
