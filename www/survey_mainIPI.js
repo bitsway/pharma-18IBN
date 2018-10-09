@@ -1525,12 +1525,12 @@ function check_user() {
 	
 	
 
-var  apipath_base_photo_dm ='http://w02.yeapps.com/ipi/syncmobile_417_new_ibn_newtest_test/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
+//var  apipath_base_photo_dm ='http://w02.yeapps.com/ipi/syncmobile_417_new_ibn_newtest/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
 	
 //var  apipath_base_photo_dm='http://a007.yeapps.com/acme/syncmobile_417_new/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
 
 
-// var apipath_base_photo_dm ='http://e2.businesssolutionapps.com/welcome/dmpath_ibn_new_version/get_path?CID='+cid +'&HTTPPASS=e99business321cba'
+ var apipath_base_photo_dm ='http://e2.businesssolutionapps.com/welcome/dmpath_ibn_new_version/get_path?CID='+cid +'&HTTPPASS=e99business321cba'
 
 	var user_id=$("#user_id").val();
 	var user_pass=$("#user_pass").val();
@@ -1702,7 +1702,6 @@ var  apipath_base_photo_dm ='http://w02.yeapps.com/ipi/syncmobile_417_new_ibn_ne
 													localStorage.cl_subcatStr=resultArray[39]
 													
 													localStorage.repType=resultArray[40]
-													localStorage.syncType=resultArray[41]
 													//alert (localStorage.repType)
 													
 													
@@ -4003,22 +4002,15 @@ function marketNextLV(lvalue) {
 	//alert (localStorage.doctor_flag)
 	if (localStorage.doctor_flag==1){
 		
-		if (localStorage.syncType=='OFFLINE'){
-			marketNext_doc();	
-		}
-		else{
-			
-			marketNext_doc_online();	
-		}
-		
+		marketNext_doc();
 	}
 	else{
-		if (localStorage.syncType=='OFFLINE'){
+		if (localStorage.user_type=='rep'){
 			marketNext();	
 		}
 		else{
 			
-			marketNext_online();	
+			marketNext_sup();	
 		}
 	}	
 }
@@ -4122,16 +4114,16 @@ function marketNext() {
 					//var url = "#page_market_ret";	
 					//$.mobile.navigate(url);
 					
-					//$.afui.loadContent("#page_market_ret",true,true,'right');
+					$.afui.loadContent("#page_market_ret",true,true,'right');
 					
 					
 				}
 			}//end else
-			$.afui.loadContent("#page_market_ret",true,true,'right');
+
 			//============================Get market client list end===============================
 		}			
 }
-function marketNext_online() {
+function marketNext_sup() {
 	$("#unscheduled_m_client_combo_id").val('');
 	
 	market_name=$("#unschedule_market_combo_id").val();
@@ -5321,188 +5313,9 @@ function marketNext_doc() {
 }
 
 
-//=========================================================
-function marketNext_doc_online() {
-	localStorage.location_detail=''
-	$("#unscheduled_m_client_combo_id").val('');
-	
-	market_name=$("#unschedule_market_combo_id").val();
-	localStorage.visit_market_show=market_name
-	
-	if(market_name=='' || market_name==0){
-			$("#err_market_next").text("Market required");
-		}else{
-			
-			$("#err_market_next").text("");			
-			$("#btn_unschedule_market").hide();
-			$("#wait_image_unschedule_market").show();		
-			
-			
-			var marketNameId=market_name.split('|');
-			var market_Id=marketNameId[1];
-			
-			var visit_type="Scheduled";
-			var scheduled_date=localStorage.scheduled_date;
-			var currentDate = new Date()
-			var day = currentDate.getDate();if(parseInt(day) > 9)	{day="0" +day};
-			var month = currentDate.getMonth() + 1;if(parseInt(month) > 9)	{month="0" +month};
-			var year = currentDate.getFullYear()
-			var today=  year + "-" + month + "-" + day
-			
-			if (localStorage.scheduleDocFlag==0){
-				scheduled_date=today
-				visit_type='Unschedule'
-				
-			}
-			
-			if (localStorage.doctor_plan_flag==1){
-				result=localStorage.market_doctorVisit
-				}
-			else{
-				//alert (localStorage.market_doctor)
-				result=localStorage.market_doctor
-			}
-			
-			
-				//===========================Get market client list Start============================
-				
-				
-				//$("#err_market_next").html(localStorage.base_url+'getMarketClientList?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&market_id='+market_Id+'&catType='+catType);
-				//http://127.0.0.1:8000/lscmreporting/syncmobile/getClientInfo?cid=LSCRM&rep_id=1001&rep_pass=123&synccode=2568&client_id=R100008
-				
-	//			//// ajax-------
-	//alert (localStorage.base_url+'getMarketDocList?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&market_id='+market_Id)
-	$.ajax(localStorage.base_url+'getMarketDocList?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&market_id='+market_Id,{
-								// cid:localStorage.cid,rep_id:localStorage.user_id,rep_pass:localStorage.user_pass,synccode:localStorage.synccode,
-								type: 'POST',
-								timeout: 30000,
-								error: function(xhr) {
-								//alert ('Error: ' + xhr.status + ' ' + xhr.statusText);
-								$("#btn_schedule_ret").show();
-								$("#wait_image_schedule_ret").hide();
-								$("#error_login").html('Network Timeout. Please check your Internet connection..');
-													},
-								success:function(data, status,xhr){	
-								
-								
-	//$.post(localStorage.base_url+'getMarketClientList?',{cid: localStorage.cid,rep_id:localStorage.user_id,rep_pass:localStorage.user_pass,synccode:localStorage.synccode,market_id:market_Id,catType:catType},
-    						 
-								
-							//	 function(data, status){
-									 if (status!='success'){
-										$("#err_retailer_next").html('Network Timeout. Please check your Internet connection...');
-										$("#btn_schedule_ret").show();
-										$("#wait_image_schedule_ret").hide();
-									 }
-									 else{	
-									 	var resultArray = data.replace('</START>','').replace('</END>','').split('<SYNCDATA>');	
-										
-										if (resultArray[0]=='FAILED'){
-											$("#err_market_next").text("Retailer not available");	
-											$("#wait_image_unschedule_market").hide();		
-											$("#btn_unschedule_market").show();
-										}
-										
-										
-										
-	
-	
-								else if (resultArray[0]=='SUCCESS'){
-									var result=resultArray[1];
-									if (result==''){
-										$("#err_market_next").text("Sorry Network not available");	
-										$("#wait_image_unschedule_market").hide();		
-										$("#btn_unschedule_market").show();
-										$.afui.loadContent("#page_market_ret",true,true,'right');
-										unscheduled_m_client_combo_ob.listview("refresh");
-									}else{
-										
-										var resultArray = result.split('</'+market_Id+'>');
-										var doc_result_list=resultArray[0].split('<'+market_Id+'>')
-										var doc_result=doc_result_list[1]	
-										//-----------------------------------
-										if ((doc_result== undefined) || (doc_result== 'undefined')){
-											$("#err_market_next").text("Doctor not available");	
-											$("#wait_image_unschedule_market").hide();		
-											$("#btn_unschedule_market").show();
-											var unscheduled_m_client_combo_ob=$('#unscheduled_m_client_combo_id');
-											var unscheduled_m_client_combo_ob=$('#unscheduled_m_client_combo_id_lv');
-											
-											unscheduled_m_client_combo_ob.empty()
-											$.afui.loadContent("#page_market_ret",true,true,'right');
-											unscheduled_m_client_combo_ob.listview("refresh");
-											
-										}
-										else{
-					
-						
-											var mClientList = doc_result.split('<rd>');
-											var mClientListShowLength=mClientList.length	
-											
-											
-											//var unscheduled_m_client_list='<option value="0" > Select Retailer</option>'
-											var unscheduled_m_client_list=''
-											for (var i=0; i < mClientListShowLength; i++){
-												var mClientValueArray = mClientList[i].split('<fd>');
-												var mClientID=mClientValueArray[0];
-												var mClientName=mClientValueArray[1];
-												//alert (mClientID)
-												if (mClientID!=''){
-													if ((localStorage.doctor_flag==1) & (localStorage.doctor_plan_flag==0) & (localStorage.doctor_pr==0)){
-														unscheduled_m_client_list+='<li class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-location" style="border-bottom-style:solid; border-color:#CBE4E4;border-bottom-width:thin"><table><tr><td><img onClick="page_doctor_profile(\''+mClientName+'|'+mClientID+'\')" style="height:20px; width:20px" src="editProfile.png">&nbsp;&nbsp;&nbsp;&nbsp;</td><td><a onClick="marketRetailerNextLV(\''+mClientName+'|'+mClientID+'\')"><font class="name" style="font-size:18; font-weight:600; color:#306161">'+mClientName+'|'+mClientID+'</font></a></td></tr></table></li>';
-													}
-													else{
-														unscheduled_m_client_list+='<li class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-location" style="border-bottom-style:solid; border-color:#CBE4E4;border-bottom-width:thin"><a onClick="marketRetailerNextLV(\''+mClientName+'|'+mClientID+'\')"><font class="name" style="font-size:18; font-weight:600; color:#306161">'+mClientName+'|'+mClientID+'</font></a></li>';
-													}
-												}								
-											}
-														
-														
-											var unscheduled_m_client_combo_ob=$('#unscheduled_m_client_combo_id');
-											var unscheduled_m_client_combo_ob=$('#unscheduled_m_client_combo_id_lv');
-											
-											unscheduled_m_client_combo_ob.empty()
-											unscheduled_m_client_combo_ob.append(unscheduled_m_client_list);
-														
-											$(".market").html(market_name);								
-											$(".visit_type").html(visit_type);								
-											$(".s_date").html(scheduled_date);
-											localStorage.visit_type=visit_type
-											localStorage.scheduled_date=scheduled_date
-														
-														//-----------------------------------
-														$("#err_market_next").text("");
-														$("#wait_image_unschedule_market").hide();		
-														$("#btn_unschedule_market").show();
-														
-														//------- 
-													//alert (localStorage.scheduled_date)
-														$.afui.loadContent("#page_market_ret",true,true,'right');
-														unscheduled_m_client_combo_ob.listview("refresh");
-														
-										}//else undefined
-								
-								
-								} //else result=''
-							
-							}//else Success
-							
-						}//
-					}//Error/Success
-				 });//end ajax
-			
-			
-
-					
-
-//			//============================Get market client list end===============================
-
-		}	//Market required else		
-}
 
 
 
-//=============================================================
 //==============================Doctor==========
 
 function marketRetailerNext_doc() {
@@ -13862,7 +13675,7 @@ function doctor_sync(){
 	$("#doctorButton").hide();
 	$("#loginButton").hide();
 	//alert (localStorage.base_url+'doctor_sync?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+encodeURIComponent(localStorage.user_pass)+'&synccode='+localStorage.synccode)							
-$.ajax(localStorage.base_url+'doctor_sync?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+encodeURIComponent(localStorage.user_pass)+'&synccode='+localStorage.synccode+'&syncType='+localStorage.syncType,{
+$.ajax(localStorage.base_url+'doctor_sync?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+encodeURIComponent(localStorage.user_pass)+'&synccode='+localStorage.synccode,{
 								// cid:localStorage.cid,rep_id:localStorage.user_id,rep_pass:localStorage.user_pass,synccode:localStorage.synccode,
 								type: 'POST',
 								timeout: 30000,
